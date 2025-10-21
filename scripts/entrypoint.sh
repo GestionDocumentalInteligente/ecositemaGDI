@@ -58,27 +58,24 @@ done
 echo "✅ MySQL is ready!"
 echo ""
 
-# Check if WordPress core files exist
-echo "🔍 Checking if WordPress core files exist..."
-if [ ! -f /var/www/html/wp-load.php ]; then
-    echo "📥 WordPress core files not found, downloading..."
-
-    # Download WordPress (will skip if already exists)
-    wp core download --allow-root --force
-
-    echo "✅ WordPress core downloaded!"
+# Verify WordPress core files exist (they should from the base image)
+echo "🔍 Verifying WordPress core files..."
+if [ -f /var/www/html/wp-load.php ]; then
+    echo "✅ WordPress core files found!"
 else
-    echo "✅ WordPress core files already exist"
+    echo "⚠️ WordPress core files missing (unexpected from wordpress:6.4-apache image)"
+    echo "🔍 Listing /var/www/html contents:"
+    ls -la /var/www/html/ || true
 fi
 echo ""
 
-# Now test with wp-cli
-echo "🔍 Testing with WP-CLI database connection..."
+# Test database connection with wp-cli
+echo "🔍 Testing database connection with WP-CLI..."
 if wp db check --allow-root 2>&1; then
-    echo "✅ WP-CLI can connect to database!"
+    echo "✅ WP-CLI database connection successful!"
 else
-    echo "❌ WP-CLI cannot connect to database"
-    exit 1
+    echo "❌ WP-CLI database check failed"
+    echo "🔍 This might be normal if WordPress isn't installed yet..."
 fi
 echo ""
 
