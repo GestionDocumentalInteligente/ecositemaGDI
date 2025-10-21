@@ -2,14 +2,75 @@
 set -e
 
 echo "🚀 Cero1 - Starting WordPress setup..."
+echo ""
+echo "========================================="
+echo "DEBUG: Environment Variables"
+echo "========================================="
+echo "MYSQLHOST: ${MYSQLHOST:-NOT SET}"
+echo "MYSQLDATABASE: ${MYSQLDATABASE:-NOT SET}"
+echo "MYSQLUSER: ${MYSQLUSER:-NOT SET}"
+echo "MYSQLPASSWORD: ${MYSQLPASSWORD:+***SET***}"
+echo "MYSQLPORT: ${MYSQLPORT:-NOT SET}"
+echo "WP_HOME: ${WP_HOME:-NOT SET}"
+echo "WP_ADMIN_EMAIL: ${WP_ADMIN_EMAIL:-NOT SET}"
+echo "========================================="
+echo ""
 
-# Wait for MySQL to be ready
-echo "⏳ Waiting for MySQL..."
-until wp db check --allow-root 2>/dev/null; do
-    echo "MySQL is unavailable - sleeping"
+# Construct DB host
+DB_HOST="${MYSQLHOST:-mysql.railway.internal}"
+DB_PORT="${MYSQLPORT:-3306}"
+DB_FULL_HOST="${DB_HOST}:${DB_PORT}"
+
+echo "🔍 Constructed DB connection: ${DB_FULL_HOST}"
+echo "🔍 Database name: ${MYSQLDATABASE:-railway}"
+echo "🔍 Database user: ${MYSQLUSER:-root}"
+echo ""
+
+# Test raw MySQL connectivity with mysqladmin
+echo "⏳ Testing MySQL connectivity with mysqladmin..."
+MAX_TRIES=60
+COUNT=0
+
+until mysqladmin ping -h"${DB_HOST}" -P"${DB_PORT}" -u"${MYSQLUSER:-root}" -p"${MYSQLPASSWORD}" --silent 2>&1; do
+    COUNT=$((COUNT + 1))
+    if [ $COUNT -ge $MAX_TRIES ]; then
+        echo "❌ ERROR: MySQL is unavailable after $MAX_TRIES attempts"
+        echo ""
+        echo "🔍 Final connection details:"
+        echo "   Host: ${DB_HOST}"
+        echo "   Port: ${DB_PORT}"
+        echo "   User: ${MYSQLUSER:-root}"
+        echo "   Database: ${MYSQLDATABASE:-railway}"
+        echo ""
+        echo "🔍 Attempting DNS resolution..."
+        nslookup ${DB_HOST} || echo "DNS lookup failed"
+        echo ""
+        echo "🔍 Attempting ping..."
+        ping -c 3 ${DB_HOST} || echo "Ping failed"
+        echo ""
+        echo "🔍 Attempting telnet test..."
+        timeout 5 bash -c "echo -n > /dev/tcp/${DB_HOST}/${DB_PORT}" 2>&1 && echo "Port is open!" || echo "Port is closed or unreachable"
+        exit 1
+    fi
+    echo "MySQL is unavailable - sleeping (attempt $COUNT/$MAX_TRIES)"
     sleep 3
 done
 echo "✅ MySQL is ready!"
+echo ""
+
+# Now test with wp-cli
+echo "🔍 Testing with WP-CLI..."
+if wp db check --allow-root 2>&1; then
+    echo "✅ WP-CLI can connect to database!"
+else
+    echo "❌ WP-CLI cannot connect to database"
+    echo "🔍 wp-config.php database constants:"
+    wp config get DB_HOST --allow-root || echo "DB_HOST not set"
+    wp config get DB_NAME --allow-root || echo "DB_NAME not set"
+    wp config get DB_USER --allow-root || echo "DB_USER not set"
+    exit 1
+fi
+echo ""
 
 # Check if WordPress is already installed
 if ! wp core is-installed --allow-root 2>/dev/null; then
