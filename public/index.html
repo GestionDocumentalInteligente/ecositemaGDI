@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cero1 - Marketplace de Soluciones para Ciudades Inteligentes">
+  <title>Cero1 - Marketplace de Soluciones</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <h1 class="logo">Cero<span>1</span></h1>
+        <nav class="nav">
+          <button id="lang-toggle" class="lang-toggle" aria-label="Cambiar idioma">
+            <span class="lang-icon">🌐</span>
+            <span id="current-lang">ES</span>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h2 class="hero-title" data-i18n="hero.title">Marketplace de Soluciones para Ciudades</h2>
+      <p class="hero-subtitle" data-i18n="hero.subtitle">
+        Descubrí las mejores soluciones tecnológicas para transformar tu ciudad
+      </p>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="filters">
+    <div class="container">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-category="all" data-i18n="filters.all">
+          Todas
+        </button>
+        <button class="filter-btn" data-category="mobility">
+          🚗 <span data-i18n="categories.mobility">Movilidad</span>
+        </button>
+        <button class="filter-btn" data-category="public-space">
+          🏛️ <span data-i18n="categories.publicSpace">Espacio Público</span>
+        </button>
+        <button class="filter-btn" data-category="fintech">
+          💰 <span data-i18n="categories.fintech">Fintech</span>
+        </button>
+        <button class="filter-btn" data-category="legal-ai">
+          ⚖️ <span data-i18n="categories.legalAI">LegalIA</span>
+        </button>
+        <button class="filter-btn" data-category="data">
+          📊 <span data-i18n="categories.data">Datos</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions Grid -->
+  <main class="main">
+    <div class="container">
+      <div id="solutions-grid" class="solutions-grid">
+        <!-- Solutions will be loaded here by JavaScript -->
+      </div>
+
+      <!-- Loading State -->
+      <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p data-i18n="loading">Cargando soluciones...</p>
+      </div>
+
+      <!-- Empty State -->
+      <div id="empty-state" class="empty-state" style="display: none;">
+        <p data-i18n="emptyState">No se encontraron soluciones</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Cero1 - GDI Latam. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
+      <p>
+        <a href="/admin.html" data-i18n="footer.admin">Admin</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Modal for Solution Details -->
+  <div id="modal" class="modal" style="display: none;">
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close" aria-label="Cerrar">×</button>
+
+      <!-- Image Gallery -->
+      <div class="modal-gallery" id="modal-gallery">
+        <!-- Images will be loaded here -->
+      </div>
+
+      <!-- Solution Details -->
+      <div class="modal-details">
+        <h2 id="modal-name" class="modal-name"></h2>
+        <p id="modal-category" class="modal-category"></p>
+        <p id="modal-description" class="modal-description"></p>
+
+        <div class="modal-links">
+          <a id="modal-website" href="#" target="_blank" rel="noopener noreferrer" class="modal-link">
+            🌐 <span data-i18n="modal.website">Visitar sitio web</span>
+          </a>
+          <a id="modal-email" href="#" class="modal-link" style="display: none;">
+            📧 <span data-i18n="modal.email">Enviar email</span>
+          </a>
+          <a id="modal-phone" href="#" class="modal-link" style="display: none;">
+            📞 <span data-i18n="modal.phone">Llamar</span>
+          </a>
+        </div>
+
+        <div id="modal-linkedin" class="modal-linkedin" style="display: none;">
+          <h3 data-i18n="modal.founders">Founders</h3>
+          <div id="modal-linkedin-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/js/i18n.js"></script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

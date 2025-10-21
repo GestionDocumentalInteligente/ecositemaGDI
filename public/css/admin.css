@@ -1,0 +1,363 @@
+/* ============================================================
+   Admin Panel Styles
+   ============================================================ */
+
+/* Login Screen */
+.login-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+}
+
+.login-container {
+  background-color: white;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.login-container .logo {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.login-container h2 {
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#login-form input {
+  padding: 1rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+#login-form input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+#login-form button {
+  padding: 1rem;
+  background-color: var(--primary);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+#login-form button:hover {
+  background-color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+.login-footer {
+  margin-top: 2rem;
+}
+
+.login-footer a {
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+/* Admin Dashboard */
+.admin-dashboard {
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+.admin-header {
+  background-color: var(--primary);
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.admin-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-header .logo small {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.admin-header nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.admin-header a,
+.admin-header button {
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.admin-header a:hover,
+.admin-header button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.admin-main {
+  padding: 2rem 0;
+}
+
+.admin-actions {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.btn-secondary {
+  background-color: var(--background);
+  color: var(--text-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.btn-secondary:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  transition: var(--transition);
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.btn-edit {
+  background-color: var(--secondary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  transition: var(--transition);
+}
+
+.btn-edit:hover {
+  background-color: var(--primary);
+}
+
+/* Solutions Table */
+.solutions-table-container {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.solutions-table-container h2 {
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.solutions-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.solutions-table thead {
+  background-color: var(--background);
+}
+
+.solutions-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--primary);
+  border-bottom: 2px solid var(--border);
+}
+
+.solutions-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.solutions-table tbody tr:hover {
+  background-color: var(--background);
+}
+
+.solutions-table .actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.table-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-secondary);
+}
+
+/* Form Modal */
+.modal-form {
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-form h2 {
+  color: var(--primary);
+  margin-bottom: 2rem;
+  padding: 0 2rem;
+  padding-top: 2rem;
+}
+
+#solution-form {
+  padding: 0 2rem 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-group small {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+#linkedin-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.linkedin-input {
+  width: 100%;
+}
+
+#add-linkedin-btn {
+  margin-bottom: 1rem;
+}
+
+.current-images {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.current-images img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid var(--border);
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--border);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .solutions-table {
+    font-size: 0.875rem;
+  }
+
+  .solutions-table th,
+  .solutions-table td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .admin-header nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .modal-form {
+    margin: 0;
+    border-radius: 0;
+    max-height: 100vh;
+  }
+}

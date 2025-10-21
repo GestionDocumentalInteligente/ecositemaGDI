@@ -1,25 +1,12 @@
-# WordPress Core
-/wordpress/
-/wp-config.php
-wp-content/uploads/
-wp-content/blogs.dir/
-wp-content/upgrade/
-wp-content/backup-db/
-wp-content/cache/
-wp-content/backups/
-
 # Environment variables
 .env
 .env.local
-.env.production
 
-# Railway
-.railway/
-
-# Node modules (if using any build tools)
+# Node modules
 node_modules/
 npm-debug.log
 yarn-error.log
+package-lock.json
 
 # OS files
 .DS_Store
@@ -35,8 +22,6 @@ desktop.ini
 # Logs
 *.log
 logs/
-*.sql
-*.sqlite
 
 # Temporary files
 *.tmp
@@ -45,20 +30,6 @@ logs/
 *.swo
 *~
 
-# Composer (if using)
-/vendor/
-composer.lock
-
-# WordPress plugins (we install via script, but keep custom ones)
-wp-content/plugins/*
-!wp-content/plugins/hivepress-auth0/
-
-# WordPress themes (keep only child theme)
-wp-content/themes/*
-!wp-content/themes/hivepress-child/
-
-# Keep must-use plugins
-!wp-content/mu-plugins/
-
-# WP-CLI
-wp-cli.local.yml
+# Uploaded images (keep directory structure, ignore actual files)
+public/images/solutions/*
+!public/images/solutions/.gitkeep
