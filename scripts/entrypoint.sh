@@ -3,8 +3,76 @@ set -e
 
 echo "🚀 Cero1 - Starting WordPress setup..."
 echo ""
+
+# STEP 1: Trigger WordPress file copy by calling original entrypoint in setup mode
+# The wordpress:6.4-apache image copies files from /usr/src/wordpress/ to /var/www/html/
+# We need to trigger this, but without starting Apache yet
+echo "📥 Triggering WordPress file initialization..."
+
+# Check if WordPress files already exist (from previous container run)
+if [ ! -f /var/www/html/wp-settings.php ]; then
+    echo "WordPress files not found, copying from /usr/src/wordpress/..."
+
+    # Use the WordPress entrypoint's built-in file copying logic
+    # We'll call it with a dummy command that will copy files then exit
+    /usr/local/bin/docker-entrypoint.sh wp --version --allow-root 2>/dev/null || true
+
+    # Wait for WordPress files to appear
+    MAX_WAIT=30
+    COUNT=0
+    until [ -f /var/www/html/wp-settings.php ] || [ $COUNT -ge $MAX_WAIT ]; do
+        COUNT=$((COUNT + 1))
+        echo "Waiting for WordPress files... ($COUNT/$MAX_WAIT)"
+        sleep 1
+    done
+fi
+
+if [ -f /var/www/html/wp-settings.php ]; then
+    echo "✅ WordPress core files are present!"
+else
+    echo "❌ ERROR: WordPress files still missing after initialization attempt"
+    echo "Listing /var/www/html contents:"
+    ls -la /var/www/html/ || true
+    exit 1
+fi
+echo ""
+
+# STEP 2: Copy our custom files from staging directory to WordPress directory
+echo "📋 Copying custom files from staging directory..."
+
+# Copy wp-config.php
+if [ -f /opt/cero1/wp-config.php ]; then
+    echo "Copying custom wp-config.php..."
+    cp /opt/cero1/wp-config.php /var/www/html/wp-config.php
+fi
+
+# Copy custom theme
+if [ -d /opt/cero1/wp-content/themes/hivepress-child ]; then
+    echo "Copying hivepress-child theme..."
+    mkdir -p /var/www/html/wp-content/themes
+    cp -r /opt/cero1/wp-content/themes/hivepress-child /var/www/html/wp-content/themes/
+fi
+
+# Copy custom plugins
+if [ -d /opt/cero1/wp-content/plugins/hivepress-auth0 ]; then
+    echo "Copying hivepress-auth0 plugin..."
+    mkdir -p /var/www/html/wp-content/plugins
+    cp -r /opt/cero1/wp-content/plugins/hivepress-auth0 /var/www/html/wp-content/plugins/
+fi
+
+# Copy must-use plugins
+if [ -d /opt/cero1/wp-content/mu-plugins ]; then
+    echo "Copying mu-plugins..."
+    mkdir -p /var/www/html/wp-content/mu-plugins
+    cp -r /opt/cero1/wp-content/mu-plugins/* /var/www/html/wp-content/mu-plugins/
+fi
+
+echo "✅ Custom files copied successfully!"
+echo ""
+
+# STEP 3: Display environment configuration
 echo "========================================="
-echo "DEBUG: Environment Variables"
+echo "Environment Configuration"
 echo "========================================="
 echo "MYSQLHOST: ${MYSQLHOST:-NOT SET}"
 echo "MYSQLDATABASE: ${MYSQLDATABASE:-NOT SET}"
@@ -16,18 +84,11 @@ echo "WP_ADMIN_EMAIL: ${WP_ADMIN_EMAIL:-NOT SET}"
 echo "========================================="
 echo ""
 
-# Construct DB host
+# STEP 4: Wait for MySQL to be ready
 DB_HOST="${MYSQLHOST:-mysql.railway.internal}"
 DB_PORT="${MYSQLPORT:-3306}"
-DB_FULL_HOST="${DB_HOST}:${DB_PORT}"
 
-echo "🔍 Constructed DB connection: ${DB_FULL_HOST}"
-echo "🔍 Database name: ${MYSQLDATABASE:-railway}"
-echo "🔍 Database user: ${MYSQLUSER:-root}"
-echo ""
-
-# Test raw MySQL connectivity with mysqladmin
-echo "⏳ Testing MySQL connectivity with mysqladmin..."
+echo "⏳ Waiting for MySQL at ${DB_HOST}:${DB_PORT}..."
 MAX_TRIES=60
 COUNT=0
 
@@ -35,51 +96,17 @@ until mysqladmin ping -h"${DB_HOST}" -P"${DB_PORT}" -u"${MYSQLUSER:-root}" -p"${
     COUNT=$((COUNT + 1))
     if [ $COUNT -ge $MAX_TRIES ]; then
         echo "❌ ERROR: MySQL is unavailable after $MAX_TRIES attempts"
-        echo ""
-        echo "🔍 Final connection details:"
-        echo "   Host: ${DB_HOST}"
-        echo "   Port: ${DB_PORT}"
-        echo "   User: ${MYSQLUSER:-root}"
-        echo "   Database: ${MYSQLDATABASE:-railway}"
-        echo ""
-        echo "🔍 Attempting DNS resolution..."
-        nslookup ${DB_HOST} || echo "DNS lookup failed"
-        echo ""
-        echo "🔍 Attempting ping..."
-        ping -c 3 ${DB_HOST} || echo "Ping failed"
-        echo ""
-        echo "🔍 Attempting telnet test..."
-        timeout 5 bash -c "echo -n > /dev/tcp/${DB_HOST}/${DB_PORT}" 2>&1 && echo "Port is open!" || echo "Port is closed or unreachable"
+        echo "Connection details: ${DB_HOST}:${DB_PORT} / user: ${MYSQLUSER:-root}"
         exit 1
     fi
     echo "MySQL is unavailable - sleeping (attempt $COUNT/$MAX_TRIES)"
     sleep 3
 done
+
 echo "✅ MySQL is ready!"
 echo ""
 
-# Verify WordPress core files exist (they should from the base image)
-echo "🔍 Verifying WordPress core files..."
-if [ -f /var/www/html/wp-load.php ]; then
-    echo "✅ WordPress core files found!"
-else
-    echo "⚠️ WordPress core files missing (unexpected from wordpress:6.4-apache image)"
-    echo "🔍 Listing /var/www/html contents:"
-    ls -la /var/www/html/ || true
-fi
-echo ""
-
-# Test database connection with wp-cli
-echo "🔍 Testing database connection with WP-CLI..."
-if wp db check --allow-root 2>&1; then
-    echo "✅ WP-CLI database connection successful!"
-else
-    echo "❌ WP-CLI database check failed"
-    echo "🔍 This might be normal if WordPress isn't installed yet..."
-fi
-echo ""
-
-# Check if WordPress is already installed
+# STEP 5: Install WordPress if not already installed
 if ! wp core is-installed --allow-root 2>/dev/null; then
     echo "📦 Installing WordPress..."
 
@@ -96,8 +123,9 @@ if ! wp core is-installed --allow-root 2>/dev/null; then
 else
     echo "✅ WordPress already installed"
 fi
+echo ""
 
-# Check if HivePress setup is done
+# STEP 6: Configure HivePress (one-time setup)
 if ! wp option get hivepress_configured --allow-root 2>/dev/null; then
     echo "🔧 Configuring HivePress..."
 
@@ -126,26 +154,33 @@ if ! wp option get hivepress_configured --allow-root 2>/dev/null; then
 else
     echo "✅ HivePress already configured"
 fi
+echo ""
 
-# Ensure plugins are activated
+# STEP 7: Ensure plugins are activated
 echo "🔌 Ensuring plugins are activated..."
 wp plugin activate hivepress --allow-root 2>/dev/null || echo "⚠️ HivePress not found"
 wp plugin activate hivepress-auth0 --allow-root 2>/dev/null || echo "⚠️ Auth0 plugin not found"
 wp plugin activate polylang --allow-root 2>/dev/null || echo "⚠️ Polylang not found"
+echo ""
 
-# Set permalink structure
+# STEP 8: Set permalink structure
 echo "🔗 Setting permalink structure..."
 wp rewrite structure '/%postname%/' --allow-root 2>/dev/null || echo "⚠️ Could not set permalinks"
 wp rewrite flush --allow-root 2>/dev/null || echo "⚠️ Could not flush rewrites"
+echo ""
 
-# Fix permissions
+# STEP 9: Fix permissions
 echo "🔒 Fixing permissions..."
-chown -R www-data:www-data /var/www/html/wp-content/uploads 2>/dev/null || true
+chown -R www-data:www-data /var/www/html
+find /var/www/html -type d -exec chmod 755 {} \; 2>/dev/null || true
+find /var/www/html -type f -exec chmod 644 {} \; 2>/dev/null || true
+echo ""
 
 echo "✨ Setup complete! Starting Apache..."
 echo "🌐 Access WordPress at: ${WP_HOME}"
-echo "🔐 Admin: ${WP_ADMIN_USER} / ${WP_ADMIN_EMAIL}"
+echo "🔐 Admin: ${WP_ADMIN_USER:-admin} / ${WP_ADMIN_EMAIL}"
 echo ""
 
-# Execute the original Docker entrypoint
-exec docker-entrypoint.sh "$@"
+# STEP 10: Execute the original WordPress entrypoint with Apache
+# Use exec to replace this process with Apache, ensuring proper signal handling
+exec /usr/local/bin/docker-entrypoint.sh "$@"

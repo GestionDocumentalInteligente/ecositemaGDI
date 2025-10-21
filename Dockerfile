@@ -25,34 +25,40 @@ RUN a2enmod rewrite expires headers
 # Set working directory
 WORKDIR /var/www/html
 
-# Copy custom wp-config.php
-COPY config/wp-config.php /var/www/html/wp-config.php
+# Create staging directory for our custom files
+# This prevents interference with WordPress's runtime initialization
+RUN mkdir -p /opt/cero1/wp-content/themes \
+    && mkdir -p /opt/cero1/wp-content/plugins \
+    && mkdir -p /opt/cero1/wp-content/mu-plugins
+
+# Copy custom wp-config.php to staging
+COPY config/wp-config.php /opt/cero1/wp-config.php
 
 # Copy scripts
 COPY scripts/ /usr/local/bin/scripts/
 RUN chmod +x /usr/local/bin/scripts/*.sh
 
-# Copy custom themes
-COPY wp-content/themes/hivepress-child /var/www/html/wp-content/themes/hivepress-child
+# Copy custom themes to staging
+COPY wp-content/themes/hivepress-child /opt/cero1/wp-content/themes/hivepress-child
 
-# Copy custom plugins
-COPY wp-content/plugins/hivepress-auth0 /var/www/html/wp-content/plugins/hivepress-auth0
+# Copy custom plugins to staging
+COPY wp-content/plugins/hivepress-auth0 /opt/cero1/wp-content/plugins/hivepress-auth0
 
-# Copy must-use plugins
-COPY wp-content/mu-plugins /var/www/html/wp-content/mu-plugins
+# Copy must-use plugins to staging
+COPY wp-content/mu-plugins /opt/cero1/wp-content/mu-plugins
 
-# Set permissions
-RUN chown -R www-data:www-data /var/www/html \
-    && find /var/www/html -type d -exec chmod 755 {} \; \
-    && find /var/www/html -type f -exec chmod 644 {} \;
+# Set permissions on staging directory
+RUN chown -R www-data:www-data /opt/cero1 \
+    && find /opt/cero1 -type d -exec chmod 755 {} \; \
+    && find /opt/cero1 -type f -exec chmod 644 {} \;
 
-# Copy custom entrypoint
-COPY scripts/entrypoint.sh /usr/local/bin/custom-entrypoint.sh
-RUN chmod +x /usr/local/bin/custom-entrypoint.sh
+# Copy our custom entrypoint script
+COPY scripts/entrypoint.sh /usr/local/bin/cero1-entrypoint.sh
+RUN chmod +x /usr/local/bin/cero1-entrypoint.sh
 
 # Expose port
 EXPOSE 80
 
-# Set entrypoint
-ENTRYPOINT ["/usr/local/bin/custom-entrypoint.sh"]
+# Use our custom entrypoint
+ENTRYPOINT ["/usr/local/bin/cero1-entrypoint.sh"]
 CMD ["apache2-foreground"]
