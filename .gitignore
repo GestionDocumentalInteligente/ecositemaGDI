@@ -1,0 +1,64 @@
+# WordPress Core
+/wordpress/
+wp-config.php
+wp-content/uploads/
+wp-content/blogs.dir/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/cache/
+wp-content/backups/
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Railway
+.railway/
+
+# Node modules (if using any build tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+logs/
+*.sql
+*.sqlite
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Composer (if using)
+/vendor/
+composer.lock
+
+# WordPress plugins (we install via script, but keep custom ones)
+wp-content/plugins/*
+!wp-content/plugins/hivepress-auth0/
+
+# WordPress themes (keep only child theme)
+wp-content/themes/*
+!wp-content/themes/hivepress-child/
+
+# Keep must-use plugins
+!wp-content/mu-plugins/
+
+# WP-CLI
+wp-cli.local.yml
