@@ -58,16 +58,26 @@ done
 echo "✅ MySQL is ready!"
 echo ""
 
+# Check if WordPress core files exist
+echo "🔍 Checking if WordPress core files exist..."
+if [ ! -f /var/www/html/wp-load.php ]; then
+    echo "📥 WordPress core files not found, downloading..."
+
+    # Download WordPress (will skip if already exists)
+    wp core download --allow-root --force
+
+    echo "✅ WordPress core downloaded!"
+else
+    echo "✅ WordPress core files already exist"
+fi
+echo ""
+
 # Now test with wp-cli
-echo "🔍 Testing with WP-CLI..."
+echo "🔍 Testing with WP-CLI database connection..."
 if wp db check --allow-root 2>&1; then
     echo "✅ WP-CLI can connect to database!"
 else
     echo "❌ WP-CLI cannot connect to database"
-    echo "🔍 wp-config.php database constants:"
-    wp config get DB_HOST --allow-root || echo "DB_HOST not set"
-    wp config get DB_NAME --allow-root || echo "DB_NAME not set"
-    wp config get DB_USER --allow-root || echo "DB_USER not set"
     exit 1
 fi
 echo ""
