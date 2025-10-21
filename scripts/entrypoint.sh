@@ -4,40 +4,55 @@ set -e
 echo "🚀 Cero1 - Starting WordPress setup..."
 echo ""
 
-# STEP 1: Trigger WordPress file copy by calling original entrypoint in setup mode
-# The wordpress:6.4-apache image copies files from /usr/src/wordpress/ to /var/www/html/
-# We need to trigger this, but without starting Apache yet
-echo "📥 Triggering WordPress file initialization..."
+# STEP 1: Copy WordPress core files from /usr/src/wordpress/
+# The wordpress:6.4-apache image stores files in /usr/src/wordpress/ at build time
+echo "📥 Initializing WordPress core files..."
 
 # Check if WordPress files already exist (from previous container run)
 if [ ! -f /var/www/html/wp-settings.php ]; then
-    echo "WordPress files not found, copying from /usr/src/wordpress/..."
+    echo "WordPress core files not found in /var/www/html/"
 
-    # Use the WordPress entrypoint's built-in file copying logic
-    # We'll call it with a dummy command that will copy files then exit
-    /usr/local/bin/docker-entrypoint.sh wp --version --allow-root 2>/dev/null || true
+    # Check if source files exist in /usr/src/wordpress/
+    if [ -f /usr/src/wordpress/wp-settings.php ]; then
+        echo "Copying WordPress core files from /usr/src/wordpress/..."
 
-    # Wait for WordPress files to appear
-    MAX_WAIT=30
-    COUNT=0
-    until [ -f /var/www/html/wp-settings.php ] || [ $COUNT -ge $MAX_WAIT ]; do
-        COUNT=$((COUNT + 1))
-        echo "Waiting for WordPress files... ($COUNT/$MAX_WAIT)"
-        sleep 1
-    done
+        # Copy WordPress core files (but not wp-content, we'll handle that separately)
+        tar --create \
+            --file - \
+            --one-file-system \
+            --directory /usr/src/wordpress \
+            --exclude wp-content \
+            . | tar --extract --file - --directory /var/www/html
+
+        echo "✅ WordPress core files copied successfully!"
+    else
+        echo "❌ ERROR: WordPress source files not found in /usr/src/wordpress/"
+        ls -la /usr/src/wordpress/ || true
+        exit 1
+    fi
+else
+    echo "✅ WordPress core files already present!"
 fi
 
-if [ -f /var/www/html/wp-settings.php ]; then
-    echo "✅ WordPress core files are present!"
-else
-    echo "❌ ERROR: WordPress files still missing after initialization attempt"
+# Verify WordPress files are now present
+if [ ! -f /var/www/html/wp-settings.php ]; then
+    echo "❌ ERROR: WordPress files still missing after copy attempt"
     echo "Listing /var/www/html contents:"
     ls -la /var/www/html/ || true
     exit 1
 fi
 echo ""
 
-# STEP 2: Copy our custom files from staging directory to WordPress directory
+# STEP 2: Copy default wp-content from WordPress source if needed
+if [ -d /usr/src/wordpress/wp-content ] && [ ! -d /var/www/html/wp-content/plugins ]; then
+    echo "📋 Copying default wp-content structure..."
+    mkdir -p /var/www/html/wp-content
+    cp -r /usr/src/wordpress/wp-content/* /var/www/html/wp-content/ 2>/dev/null || true
+    echo "✅ Default wp-content copied!"
+fi
+echo ""
+
+# STEP 3: Copy our custom files from staging directory to WordPress directory
 echo "📋 Copying custom files from staging directory..."
 
 # Copy wp-config.php
@@ -70,7 +85,7 @@ fi
 echo "✅ Custom files copied successfully!"
 echo ""
 
-# STEP 3: Display environment configuration
+# STEP 4: Display environment configuration
 echo "========================================="
 echo "Environment Configuration"
 echo "========================================="
@@ -84,7 +99,7 @@ echo "WP_ADMIN_EMAIL: ${WP_ADMIN_EMAIL:-NOT SET}"
 echo "========================================="
 echo ""
 
-# STEP 4: Wait for MySQL to be ready
+# STEP 5: Wait for MySQL to be ready
 DB_HOST="${MYSQLHOST:-mysql.railway.internal}"
 DB_PORT="${MYSQLPORT:-3306}"
 
@@ -106,7 +121,7 @@ done
 echo "✅ MySQL is ready!"
 echo ""
 
-# STEP 5: Install WordPress if not already installed
+# STEP 6: Install WordPress if not already installed
 if ! wp core is-installed --allow-root 2>/dev/null; then
     echo "📦 Installing WordPress..."
 
@@ -125,7 +140,7 @@ else
 fi
 echo ""
 
-# STEP 6: Configure HivePress (one-time setup)
+# STEP 7: Configure HivePress (one-time setup)
 if ! wp option get hivepress_configured --allow-root 2>/dev/null; then
     echo "🔧 Configuring HivePress..."
 
@@ -156,20 +171,20 @@ else
 fi
 echo ""
 
-# STEP 7: Ensure plugins are activated
+# STEP 8: Ensure plugins are activated
 echo "🔌 Ensuring plugins are activated..."
 wp plugin activate hivepress --allow-root 2>/dev/null || echo "⚠️ HivePress not found"
 wp plugin activate hivepress-auth0 --allow-root 2>/dev/null || echo "⚠️ Auth0 plugin not found"
 wp plugin activate polylang --allow-root 2>/dev/null || echo "⚠️ Polylang not found"
 echo ""
 
-# STEP 8: Set permalink structure
+# STEP 9: Set permalink structure
 echo "🔗 Setting permalink structure..."
 wp rewrite structure '/%postname%/' --allow-root 2>/dev/null || echo "⚠️ Could not set permalinks"
 wp rewrite flush --allow-root 2>/dev/null || echo "⚠️ Could not flush rewrites"
 echo ""
 
-# STEP 9: Fix permissions
+# STEP 10: Fix permissions
 echo "🔒 Fixing permissions..."
 chown -R www-data:www-data /var/www/html
 find /var/www/html -type d -exec chmod 755 {} \; 2>/dev/null || true
@@ -181,6 +196,6 @@ echo "🌐 Access WordPress at: ${WP_HOME}"
 echo "🔐 Admin: ${WP_ADMIN_USER:-admin} / ${WP_ADMIN_EMAIL}"
 echo ""
 
-# STEP 10: Execute the original WordPress entrypoint with Apache
+# STEP 11: Execute the original WordPress entrypoint with Apache
 # Use exec to replace this process with Apache, ensuring proper signal handling
 exec /usr/local/bin/docker-entrypoint.sh "$@"
