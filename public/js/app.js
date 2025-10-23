@@ -84,6 +84,7 @@ const app = {
   renderSolutions() {
     const grid = document.getElementById('solutions-grid');
     const emptyState = document.getElementById('empty-state');
+    const viewMoreContainer = document.getElementById('view-more-container');
 
     // Filter solutions
     const filtered = this.currentFilter === 'all'
@@ -94,19 +95,42 @@ const app = {
     if (filtered.length === 0) {
       utils.hide(grid);
       utils.show(emptyState);
+      if (viewMoreContainer) utils.hide(viewMoreContainer);
       return;
     }
 
     utils.show(grid);
     utils.hide(emptyState);
 
+    // On home page, show only 3 random solutions
+    const isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html';
+    let toDisplay = filtered;
+
+    if (isHomePage) {
+      // Shuffle and take 3
+      const shuffled = [...filtered].sort(() => Math.random() - 0.5);
+      toDisplay = shuffled.slice(0, 3);
+
+      // Show "Ver más" button if there are more solutions
+      if (viewMoreContainer) {
+        if (filtered.length > 3) {
+          utils.show(viewMoreContainer);
+        } else {
+          utils.hide(viewMoreContainer);
+        }
+      }
+    } else {
+      // On "all solutions" page, hide the button
+      if (viewMoreContainer) utils.hide(viewMoreContainer);
+    }
+
     // Render cards
-    grid.innerHTML = filtered.map(solution => this.createSolutionCard(solution)).join('');
+    grid.innerHTML = toDisplay.map(solution => this.createSolutionCard(solution)).join('');
 
     // Add click handlers
     grid.querySelectorAll('.solution-card').forEach((card, index) => {
       card.addEventListener('click', () => {
-        this.showSolutionDetails(filtered[index]);
+        this.showSolutionDetails(toDisplay[index]);
       });
     });
   },

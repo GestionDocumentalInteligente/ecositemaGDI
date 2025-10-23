@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cero1 - Marketplace de Soluciones para Ciudades Inteligentes">
-  <title>Cero1 - Marketplace de Soluciones</title>
+  <meta name="description" content="Ecosistema GDI - Protocolo de Soluciones para Ciudades">
+  <title>Ecosistema GDI</title>
+  <link rel="icon" type="image/png" href="/images/site/Logo.png">
   <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
@@ -12,8 +13,14 @@
   <header class="header">
     <div class="container">
       <div class="header-content">
-        <h1 class="logo">Cero<span>1</span></h1>
+        <a href="/" class="logo-link">
+          <img src="/images/site/Logo.png" alt="Ecosistema GDI" class="logo-image">
+        </a>
         <nav class="nav">
+          <a href="/solutions.html" class="nav-link" data-i18n="nav.solutions">Soluciones</a>
+          <a href="/protocol.html" class="nav-link" data-i18n="nav.protocol">Protocolo</a>
+          <a href="/fundamentals.html" class="nav-link" data-i18n="nav.fundamentals">Fundamentals</a>
+          <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contacto</a>
           <button id="lang-toggle" class="lang-toggle" aria-label="Cambiar idioma">
             <span class="lang-icon">🌐</span>
             <span id="current-lang">ES</span>
@@ -26,10 +33,12 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
-      <h2 class="hero-title" data-i18n="hero.title">Marketplace de Soluciones para Ciudades</h2>
+      <div class="hero-badge" data-i18n="hero.badge">Ecosistema GDI</div>
+      <h2 class="hero-title" data-i18n="hero.title">El sistema no se reforma. Se HACKEA.</h2>
       <p class="hero-subtitle" data-i18n="hero.subtitle">
-        Descubrí las mejores soluciones tecnológicas para transformar tu ciudad
+        "El secreto del cambio es enfocar toda tu energía, no en luchar contra lo viejo, sino en construir lo nuevo."
       </p>
+      <p class="hero-subtitle-author" data-i18n="hero.subtitleAuthor">Sócrates</p>
     </div>
   </section>
 
@@ -40,28 +49,33 @@
         <button class="filter-btn active" data-category="all" data-i18n="filters.all">
           Todas
         </button>
-        <button class="filter-btn" data-category="mobility">
-          🚗 <span data-i18n="categories.mobility">Movilidad</span>
+        <button class="filter-btn" data-category="government">
+          🏛️ <span data-i18n="categories.government">Gobierno</span>
         </button>
-        <button class="filter-btn" data-category="public-space">
-          🏛️ <span data-i18n="categories.publicSpace">Espacio Público</span>
+        <button class="filter-btn" data-category="identity">
+          🆔 <span data-i18n="categories.identity">Identidad</span>
         </button>
         <button class="filter-btn" data-category="fintech">
           💰 <span data-i18n="categories.fintech">Fintech</span>
         </button>
-        <button class="filter-btn" data-category="legal-ai">
-          ⚖️ <span data-i18n="categories.legalAI">LegalIA</span>
+        <button class="filter-btn" data-category="health">
+          🏥 <span data-i18n="categories.health">Salud</span>
         </button>
-        <button class="filter-btn" data-category="data">
-          📊 <span data-i18n="categories.data">Datos</span>
+        <button class="filter-btn" data-category="city">
+          🌆 <span data-i18n="categories.city">Ciudad</span>
+        </button>
+        <button class="filter-btn" data-category="mobility">
+          🚗 <span data-i18n="categories.mobility">Movilidad</span>
         </button>
       </div>
     </div>
   </section>
 
   <!-- Solutions Grid -->
-  <main class="main">
+  <main class="main" id="solutions">
     <div class="container">
+      <h2 class="section-title" data-i18n="home.featuredSolutions">Soluciones</h2>
+
       <div id="solutions-grid" class="solutions-grid">
         <!-- Solutions will be loaded here by JavaScript -->
       </div>
@@ -76,16 +90,93 @@
       <div id="empty-state" class="empty-state" style="display: none;">
         <p data-i18n="emptyState">No se encontraron soluciones</p>
       </div>
+
+      <!-- View More Button -->
+      <div id="view-more-container" class="view-more-container" style="display: none;">
+        <a href="/solutions.html" id="view-more-btn" class="btn-view-more" data-i18n="home.viewAll">
+          Ver todas las soluciones →
+        </a>
+      </div>
     </div>
   </main>
+
+  <!-- Cities Section -->
+  <section class="cities-section" id="protocolo">
+    <div class="container">
+      <div class="cities-grid">
+        <div class="cities-content">
+          <h2 class="cities-title" data-i18n="cities.title">Todas las ciudades tienen los mismos problemas</h2>
+          <p class="cities-text" data-i18n="cities.text1">
+            Estamos construyendo un nuevo estándar de colaboración público-privada.
+          </p>
+          <p class="cities-text" data-i18n="cities.text2">
+            Un ecosistema API-first para integrar nuevas soluciones a los problemas que tenemos por vivir en comunidad.
+          </p>
+          <p class="cities-text">
+            Completa el <a href="/contact.html" style="color: var(--accent-primary); text-decoration: underline;">formulario</a> y conectá tu solución a cientos de ciudades.
+          </p>
+        </div>
+        <div class="cities-visual">
+          <img src="/images/site/ciudad.png" alt="Ciudades" class="cities-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Protocol CTA -->
+  <section style="padding: 1rem 0 2rem 0; background: var(--background);">
+    <div class="container" style="text-align: center;">
+      <a href="/protocol.html" class="btn-hero-primary" data-i18n="cities.cta">
+        Conocé más en Protocolo →
+      </a>
+    </div>
+  </section>
+
+  <!-- Future Section -->
+  <section style="padding: 2rem 0; background: var(--background);">
+    <div class="container">
+      <div style="padding: 2rem; background: var(--bg-medium); border-radius: 12px; border: 1px solid var(--border-subtle); text-align: center;">
+        <h3 style="font-size: 1.5rem; color: var(--text-white); margin-bottom: 1rem; font-weight: 700;">
+          Bienvenido al futuro de la gestión de las ciudades
+        </h3>
+        <p style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 1.5rem; line-height: 1.6;">
+          Estamos desarrollando un nuevo modelo sistémico diseñado con las últimas tecnologías que pone fin a la <strong style="color: var(--accent-soft);">BUROCRACIA</strong>
+        </p>
+        <a href="https://GDILatam.com" target="_blank" rel="noopener noreferrer"
+           style="color: var(--text-white); font-size: 1.1rem; text-decoration: none;">
+          Conocé más en GDILatam.com →
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Cero1 - GDI Latam. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
-      <p>
-        <a href="/admin.html" data-i18n="footer.admin">Admin</a>
-      </p>
+      <div class="footer-content">
+        <div class="footer-left">
+          <img src="/images/site/Logo.png" alt="Ecosistema GDI" class="footer-logo">
+          <p class="footer-tagline" data-i18n="footer.tagline">
+            Transformando ciudades con tecnología
+          </p>
+          <a href="https://GDILatam.com" target="_blank" rel="noopener noreferrer" class="footer-email">
+            GDILatam.com
+          </a>
+        </div>
+
+        <div class="footer-right">
+          <div class="footer-links">
+            <h4 data-i18n="footer.quickLinks">Links</h4>
+            <ul>
+              <li><a href="/" data-i18n="footer.home">Inicio</a></li>
+              <li><a href="/solutions.html" data-i18n="footer.solutions">Soluciones</a></li>
+              <li><a href="/protocol.html" data-i18n="footer.protocol">Protocolo</a></li>
+              <li><a href="/fundamentals.html" data-i18n="footer.fundamentals">Fundamentals</a></li>
+              <li><a href="/contact.html" data-i18n="footer.contact">Contacto</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
 

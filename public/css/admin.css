@@ -21,10 +21,10 @@
   text-align: center;
 }
 
-.login-container .logo {
-  font-size: 3rem;
+.login-logo {
+  height: 60px;
+  width: auto;
   margin-bottom: 1rem;
-  color: var(--primary);
 }
 
 .login-container h2 {
@@ -95,7 +95,18 @@
   align-items: center;
 }
 
-.admin-header .logo small {
+.admin-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-logo {
+  height: 40px;
+  width: auto;
+}
+
+.admin-logo-container small {
   font-size: 1rem;
   font-weight: 400;
   opacity: 0.8;

@@ -1,17 +1,25 @@
 {
-  "name": "cero1-marketplace",
+  "name": "ecosistema-gdi-marketplace",
   "version": "1.0.0",
-  "description": "Marketplace de Soluciones para Ciudades Inteligentes",
+  "description": "Ecosistema GDI - Marketplace de Soluciones Tecnológicas para Ciudades Inteligentes",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GDILatam/ecosistema-gdi-marketplace.git"
+  },
   "keywords": [
     "marketplace",
     "cities",
     "smart-cities",
-    "solutions"
+    "govtech",
+    "solutions",
+    "latam",
+    "gdi",
+    "ecosistema"
   ],
   "author": "GDI Latam",
   "license": "MIT",

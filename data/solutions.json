@@ -1,1 +1,262 @@
-[]
+[
+  {
+    "id": "67233c93-02aa-4dd6-bb2a-ef5a136f572b",
+    "name": "BurocraciaCero",
+    "category": "government",
+    "description": {
+      "es": "Sistema multiagente de verificación documental. Experto en verificación de diversos tipos de documentos. Ideal para las verificaciones de los trámites! \nSeguros, Certificados, Contratos y Mucho Más!",
+      "en": "Expert in verifying different types of documents.\nIdeal for verification processes in administrative workflows!\nInsurance policies, certificates, contracts, and much more!"
+    },
+    "website": "https://santiagoaranguren.notion.site",
+    "email": "mail@mail.com",
+    "phone": "+5491445588",
+    "linkedinFounders": [
+      "https://www.linkedin.com/in/santiago2050/"
+    ],
+    "images": [
+      "/images/solutions/cddc6f95-0ded-4881-a869-48eff4d025ed.jpg"
+    ],
+    "createdAt": "2025-10-21T21:22:48.057Z",
+    "updatedAt": "2025-10-21T21:22:48.057Z"
+  },
+  {
+    "id": "a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d",
+    "name": "ETHIX",
+    "category": "government",
+    "description": {
+      "es": "Plataforma de IA que actúa como copiloto en procesos de contratación pública. Utiliza inteligencia artificial avanzada para detectar fraude, colusión y problemas de cumplimiento en licitaciones y contrataciones públicas, garantizando mayor transparencia y estándares éticos.",
+      "en": "AI-powered platform that serves as a copilot for public procurement processes. It uses advanced artificial intelligence to detect fraud, collusion, and compliance issues in public contracting and bidding processes, ensuring greater transparency and ethical standards."
+    },
+    "website": "https://www.goethix.com/",
+    "email": null,
+    "phone": null,
+    "linkedinFounders": [],
+    "images": ["/images/solutions/ethix.png"],
+    "createdAt": "2025-10-21T21:30:00.000Z",
+    "updatedAt": "2025-10-21T21:30:00.000Z"
+  },
+  {
+    "id": "f1e2d3c4-b5a6-4d7e-9f8a-0b1c2d3e4f5a",
+    "name": "Izi Park",
+    "category": "mobility",
+    "description": {
+      "es": "App móvil que permite a conductores estacionar frente a entradas de garajes de otros usuarios, creando miles de nuevos espacios de estacionamiento. La plataforma también permite a propietarios de garajes compartir sus espacios y generar ingresos mensuales. Funciona como una solución de estacionamiento flexible y de pago por uso disponible en toda Argentina.",
+      "en": "Mobile app that enables drivers to park in front of garage entrances of other users, creating thousands of new parking spaces. The platform also allows garage owners to share their spaces and generate monthly income. It operates as a flexible, pay-per-use parking solution available across Argentina."
+    },
+    "website": "https://iziparkapp.com/",
+    "email": null,
+    "phone": null,
+    "linkedinFounders": [],
+    "images": ["/images/solutions/ixipark.png"],
+    "createdAt": "2025-10-21T21:30:00.000Z",
+    "updatedAt": "2025-10-21T21:30:00.000Z"
+  },
+  {
+    "id": "b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
+    "name": "Hashi",
+    "category": "city",
+    "description": {
+      "es": "Plataforma impulsada por IA para crear contenido profesional y videos en minutos. El servicio utiliza guiones inteligentes, avatares realistas y edición creativa para ayudar a las empresas a producir contenido audiovisual atractivo sin requerir equipos significativos o experiencia en producción.",
+      "en": "AI-powered platform for creating professional business content and videos in minutes. The service uses intelligent scripts, realistic avatars, and creative editing to help companies produce engaging audiovisual content without requiring significant equipment or production expertise."
+    },
+    "website": "https://www.hashiapp.com/",
+    "email": "soporte@hashiapp.com",
+    "phone": null,
+    "linkedinFounders": [],
+    "images": ["/images/solutions/hashi.png"],
+    "createdAt": "2025-10-21T21:30:00.000Z",
+    "updatedAt": "2025-10-21T21:30:00.000Z"
+  },
+  {
+    "id": "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
+    "name": "Kleros",
+    "category": "government",
+    "description": {
+      "es": "Protocolo de arbitraje descentralizado basado en blockchain que resuelve disputas de manera justa y transparente. Utiliza crowdsourcing de jurados y teoría de juegos para proporcionar resolución de conflictos rápida, económica y confiable para contratos inteligentes, e-commerce, seguros y más.",
+      "en": "Decentralized arbitration protocol based on blockchain that resolves disputes fairly and transparently. It uses jury crowdsourcing and game theory to provide fast, affordable, and reliable dispute resolution for smart contracts, e-commerce, insurance, and more."
+    },
+    "website": "https://kleros.io/",
+    "email": null,
+    "phone": null,
+    "linkedinFounders": [],
+    "images": ["/images/solutions/kleros.png"],
+    "createdAt": "2025-10-21T21:30:00.000Z",
+    "updatedAt": "2025-10-21T21:30:00.000Z"
+  },
+  {
+    "id": "d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a",
+    "name": "SOVRA",
+    "category": "identity",
+    "description": {
+      "es": "The Digital Trust Stack para instituciones. Creadores de QuarkID y OS City. Stack completo con SovraGov (digitalización de servicios públicos no-code), SovraID (motor para identidades digitales y credenciales verificables con ZK), y SovraWallet (billetera no-custodial). Implementado en Buenos Aires con 700,000+ ciudadanos usando QuarkID.",
+      "en": "The Digital Trust Stack for institutions. Creators of QuarkID and OS City. Complete stack with SovraGov (no-code public services digitization), SovraID (engine for digital IDs and verifiable credentials with ZK), and SovraWallet (non-custodial wallet). Implemented in Buenos Aires with 700,000+ citizens using QuarkID."
+    },
+    "website": "https://sovra.io",
+    "email": null,
+    "phone": null,
+    "linkedinFounders": [],
+    "images": ["/images/solutions/sovra.png"],
+    "createdAt": "2025-10-21T21:30:00.000Z",
+    "updatedAt": "2025-10-22T18:00:00.000Z"
+  },
+  {
+    "id": "e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b",
+    "name": "Quién x Mí",
+    "category": "fintech",
+    "description": {
+      "es": "Plataforma digital que conecta trabajadores independientes con clientes que buscan servicios en diversos oficios como plomería, electricidad y construcción. Operando como un marketplace sin comisiones, busca formalizar trabajadores informales mientras proporciona inclusión financiera, seguros, capacitación y otros beneficios sociales.",
+      "en": "Digital platform connecting independent workers with clients seeking services across various trades like plumbing, electrical work, and construction. Operating as a commission-free marketplace, it aims to formalize informal workers while providing financial inclusion, insurance, training, and other social benefits."
+    },
+    "website": "https://www.qxm.com.ar/",
+    "email": null,
+    "phone": null,
+    "linkedinFounders": [],
+    "images": ["/images/solutions/qxm.png"],
+    "createdAt": "2025-10-21T21:30:00.000Z",
+    "updatedAt": "2025-10-21T21:30:00.000Z"
+  },
+  {
+    "id": "f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c",
+    "name": "Satellites on Fire",
+    "category": "city",
+    "description": {
+      "es": "Plataforma de detección temprana de incendios forestales en tiempo real. Combina satélites con información cada 10 minutos y cámaras con IA propia para detectar, alertar y monitorear incendios de forma temprana. Desarrollada por expertos que trabajaron en proyectos con NASA y ESA.",
+      "en": "Real-time early forest fire detection platform. Combines satellites with information every 10 minutes and cameras with proprietary AI to detect, alert and monitor fires early. Developed by experts who worked on projects with NASA and ESA."
+    },
+    "website": "https://www.satellitesonfire.com/",
+    "email": null,
+    "phone": null,
+    "linkedinFounders": [],
+    "images": ["/images/solutions/Satellitesonfire.png"],
+    "createdAt": "2025-10-22T00:00:00.000Z",
+    "updatedAt": "2025-10-22T00:00:00.000Z"
+  },
+  {
+    "id": "a7b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d",
+    "name": "Geopagos",
+    "category": "fintech",
+    "description": {
+      "es": "Infraestructura de aceptación de pagos de LATAM. Soluciones de pago digital flexibles y modulares para empresas de toda la región, con partnerships con los principales bancos y fintechs de América Latina.",
+      "en": "Payment acceptance infrastructure for Latin America. Flexible and modular digital payment solutions for companies across the region, with partnerships with major Latin American banks and fintechs."
+    },
+    "website": "https://www.geopagos.com/",
+    "email": null,
+    "phone": null,
+    "linkedinFounders": [],
+    "images": ["/images/solutions/geopagos.png"],
+    "createdAt": "2025-10-22T00:00:00.000Z",
+    "updatedAt": "2025-10-22T00:00:00.000Z"
+  },
+  {
+    "id": "b8c9d0e1-f2a3-4b4c-5d6e-7f8a9b0c1d2e",
+    "name": "EnLite",
+    "category": "health",
+    "description": {
+      "es": "Cuidado humano y salud mental de calidad. Clínica sin paredes que proporciona atención especializada y transformación en salud mental a través de tratamiento personalizado. Opera en Argentina y Brasil con más de 5,000 proveedores de servicios.",
+      "en": "Quality human care and mental health. Clinic without walls providing specialized care and mental health transformation through personalized treatment. Operates in Argentina and Brazil with over 5,000 service providers."
+    },
+    "website": "https://enlite.health/",
+    "email": null,
+    "phone": null,
+    "linkedinFounders": [],
+    "images": ["/images/solutions/enlite.png"],
+    "createdAt": "2025-10-22T00:00:00.000Z",
+    "updatedAt": "2025-10-22T00:00:00.000Z"
+  },
+  {
+    "id": "c9d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f",
+    "name": "Menta",
+    "category": "health",
+    "description": {
+      "es": "Democratizando el acceso a la salud mental. Plataforma tecnológica enfocada en mejorar la accesibilidad a servicios de salud mental de calidad para todos.",
+      "en": "Democratizing access to mental health. Technology platform focused on improving accessibility to quality mental health services for everyone."
+    },
+    "website": "https://www.soymenta.io/",
+    "email": null,
+    "phone": null,
+    "linkedinFounders": [],
+    "images": ["/images/solutions/soymenta.png"],
+    "createdAt": "2025-10-22T00:00:00.000Z",
+    "updatedAt": "2025-10-22T00:00:00.000Z"
+  },
+  {
+    "id": "d0e1f2a3-b4c5-4d6e-7f8a-9b0c1d2e3f4a",
+    "name": "CUX",
+    "category": "health",
+    "description": {
+      "es": "Asistente de bienestar emocional disponible 24/7 impulsado por inteligencia artificial. 'Contame un secreto' - Plataforma de salud mental que utiliza IA para proporcionar apoyo emocional y conversaciones terapéuticas de manera accesible.",
+      "en": "'Tell me a secret' - 24/7 emotional wellness assistant powered by artificial intelligence. Mental health platform that uses AI to provide emotional support and therapeutic conversations in an accessible way."
+    },
+    "website": "https://cux.ai/",
+    "email": null,
+    "phone": null,
+    "linkedinFounders": [],
+    "images": ["/images/solutions/cux.png"],
+    "createdAt": "2025-10-22T00:00:00.000Z",
+    "updatedAt": "2025-10-22T00:00:00.000Z"
+  },
+  {
+    "id": "e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b",
+    "name": "Swiper",
+    "category": "city",
+    "description": {
+      "es": "Plataforma digital de gestión laboral y recursos humanos. Solución innovadora para optimizar procesos de trabajo, reclutamiento y administración de personal en el entorno laboral moderno.",
+      "en": "Digital platform for labor management and human resources. Innovative solution to optimize work processes, recruitment, and personnel administration in the modern workplace."
+    },
+    "website": "https://www.swiper.work/",
+    "email": null,
+    "phone": null,
+    "linkedinFounders": [],
+    "images": ["/images/solutions/swiper.png"],
+    "createdAt": "2025-10-22T00:00:00.000Z",
+    "updatedAt": "2025-10-22T00:00:00.000Z"
+  },
+  {
+    "id": "f2a3b4c5-d6e7-4f8a-9b0c-1d2e3f4a5b6c",
+    "name": "B2Gov",
+    "category": "government",
+    "description": {
+      "es": "Inteligencia de datos para transparencia pública. Agrega y estandariza millones de datos fragmentados de compras públicas en LATAM y Caribe, transformándolos en información centralizada y en tiempo real. Ayuda a abrir y analizar procesos de compra gubernamental para promover decisiones basadas en datos reales y sumar transparencia al ecosistema de contratación pública.",
+      "en": "Data intelligence for public transparency. Aggregates and standardizes millions of fragmented public procurement data points across Latin America and the Caribbean, transforming them into centralized real-time information. Helps open and analyze government purchasing processes to promote data-driven decisions and add transparency to the public procurement ecosystem."
+    },
+    "website": "https://b2gov.com/",
+    "email": "info@b2gov.com",
+    "phone": "+54 911 2844 1968",
+    "linkedinFounders": [],
+    "images": ["/images/solutions/b2gov.png"],
+    "createdAt": "2025-10-22T00:00:00.000Z",
+    "updatedAt": "2025-10-22T00:00:00.000Z"
+  },
+  {
+    "id": "a3b4c5d6-e7f8-4a9b-0c1d-2e3f4a5b6c7d",
+    "name": "POK",
+    "category": "identity",
+    "description": {
+      "es": "Plataforma líder mundial de marca blanca para emitir credenciales digitales NFT con estándares globales como OpenBadge 3.0 y el Modelo Europeo de Aprendizaje. Presente en 1,100+ universidades en 19+ países con 1.5+ millones de credenciales emitidas.",
+      "en": "World-leading white-label platform for issuing NFT digital credentials with global standards such as OpenBadge 3.0 and the European Learning Model. Present in 1,100+ universities across 19+ countries with 1.5+ million credentials issued."
+    },
+    "website": "https://www.pok.tech/en/",
+    "email": null,
+    "phone": null,
+    "linkedinFounders": [],
+    "images": ["/images/solutions/pok.png"],
+    "createdAt": "2025-10-22T00:00:00.000Z",
+    "updatedAt": "2025-10-22T00:00:00.000Z"
+  },
+  {
+    "id": "b4c5d6e7-f8a9-4b0c-1d2e-3f4a5b6c7d8e",
+    "name": "Ualabee",
+    "category": "mobility",
+    "description": {
+      "es": "La primera plataforma colaborativa para moverse en transporte público de LATAM. Tecnología de movilidad urbana operando en 30+ ciudades de 6 países. Ofrece planificador de viajes multimodal, seguimiento en tiempo real, observatorio de movilidad para ciudades y digitalización de datos de transporte (GTFS). Prioriza sustentabilidad y planificación integral.",
+      "en": "Latin America's first collaborative platform for public transit movement. Urban mobility technology operating in 30+ cities across 6 countries. Offers multimodal trip planner, real-time tracking, mobility observatory for cities, and transit data digitization (GTFS). Prioritizes sustainability and comprehensive planning."
+    },
+    "website": "https://ualabee.com/",
+    "email": null,
+    "phone": null,
+    "linkedinFounders": [],
+    "images": ["/images/solutions/ualabee.png"],
+    "createdAt": "2025-10-22T20:00:00.000Z",
+    "updatedAt": "2025-10-22T20:00:00.000Z"
+  }
+]
