@@ -179,15 +179,17 @@ const app = {
 
     document.getElementById('modal-description').textContent = description;
 
-    // Gallery
-    const gallery = document.getElementById('modal-gallery');
+    // Logo Image
+    const modalLogo = document.getElementById('modal-logo');
     if (solution.images && solution.images.length > 0) {
-      gallery.innerHTML = solution.images.map(img => `
-        <img src="${img}" alt="${solution.name}" onerror="this.style.display='none'">
-      `).join('');
-      utils.show(gallery);
+      modalLogo.src = solution.images[0];
+      modalLogo.alt = solution.name;
+      modalLogo.onerror = function() {
+        this.style.display = 'none';
+      };
     } else {
-      utils.hide(gallery);
+      modalLogo.src = '/images/site/Logo.png'; // Fallback to default logo
+      modalLogo.alt = 'Logo';
     }
 
     // Website

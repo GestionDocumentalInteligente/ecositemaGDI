@@ -403,11 +403,12 @@ const i18n = {
   // Get category emoji
   getCategoryEmoji(category) {
     const emojiMap = {
-      'mobility': '🚗',
-      'public-space': '🏛️',
+      'government': '🏛️',
+      'identity': '🆔',
       'fintech': '💰',
-      'legal-ai': '⚖️',
-      'data': '📊'
+      'health': '🏥',
+      'city': '🌆',
+      'mobility': '🚗'
     };
 
     return emojiMap[category] || '';

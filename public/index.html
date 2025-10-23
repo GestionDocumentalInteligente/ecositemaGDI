@@ -186,32 +186,34 @@
     <div class="modal-content">
       <button class="modal-close" id="modal-close" aria-label="Cerrar">×</button>
 
-      <!-- Image Gallery -->
-      <div class="modal-gallery" id="modal-gallery">
-        <!-- Images will be loaded here -->
-      </div>
-
-      <!-- Solution Details -->
-      <div class="modal-details">
-        <h2 id="modal-name" class="modal-name"></h2>
-        <p id="modal-category" class="modal-category"></p>
-        <p id="modal-description" class="modal-description"></p>
-
-        <div class="modal-links">
-          <a id="modal-website" href="#" target="_blank" rel="noopener noreferrer" class="modal-link">
-            🌐 <span data-i18n="modal.website">Visitar sitio web</span>
-          </a>
-          <a id="modal-email" href="#" class="modal-link" style="display: none;">
-            📧 <span data-i18n="modal.email">Enviar email</span>
-          </a>
-          <a id="modal-phone" href="#" class="modal-link" style="display: none;">
-            📞 <span data-i18n="modal.phone">Llamar</span>
-          </a>
+      <div class="modal-body">
+        <!-- Left: Logo Image -->
+        <div class="modal-image">
+          <img id="modal-logo" src="" alt="Logo">
         </div>
 
-        <div id="modal-linkedin" class="modal-linkedin" style="display: none;">
-          <h3 data-i18n="modal.founders">Founders</h3>
-          <div id="modal-linkedin-list"></div>
+        <!-- Right: Solution Details -->
+        <div class="modal-details">
+          <h2 id="modal-name" class="modal-name"></h2>
+          <p id="modal-category" class="modal-category"></p>
+          <p id="modal-description" class="modal-description"></p>
+
+          <div class="modal-links">
+            <a id="modal-website" href="#" target="_blank" rel="noopener noreferrer" class="modal-link">
+              🌐 <span data-i18n="modal.website">Visitar sitio web</span>
+            </a>
+            <a id="modal-email" href="#" class="modal-link" style="display: none;">
+              📧 <span data-i18n="modal.email">Enviar email</span>
+            </a>
+            <a id="modal-phone" href="#" class="modal-link" style="display: none;">
+              📞 <span data-i18n="modal.phone">Llamar</span>
+            </a>
+          </div>
+
+          <div id="modal-linkedin" class="modal-linkedin" style="display: none;">
+            <h3 data-i18n="modal.founders">Founders</h3>
+            <div id="modal-linkedin-list"></div>
+          </div>
         </div>
       </div>
     </div>
