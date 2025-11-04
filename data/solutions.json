@@ -222,5 +222,21 @@
     "images": ["/images/solutions/ualabee.png"],
     "createdAt": "2025-10-22T20:00:00.000Z",
     "updatedAt": "2025-10-22T20:00:00.000Z"
+  },
+  {
+    "id": "08f05d1a-3c24-499e-8fcf-88f46c76a9a9",
+    "name": "Cero1",
+    "category": "government",
+    "description": {
+      "es": "Plataforma de IA que elimina la burocracia en trámites municipales. Verifica documentos automáticamente en tiempo real, procesando solicitudes en ~86 segundos mediante análisis probabilístico. Integrable vía API con sistemas existentes.",
+      "en": "AI platform that eliminates bureaucracy in municipal procedures. Automatically verifies documents in real-time, processing requests in ~86 seconds through probabilistic analysis. Integrable via API with existing systems."
+    },
+    "website": "https://cero1-web-production.up.railway.app/",
+    "email": "contacto@cero1.lat",
+    "phone": null,
+    "linkedinFounders": [],
+    "images": ["/images/solutions/cero1.png"],
+    "createdAt": "2025-11-04T20:27:56.208Z",
+    "updatedAt": "2025-11-04T20:27:56.208Z"
   }
 ]
