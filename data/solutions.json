@@ -238,5 +238,21 @@
     "images": ["/images/solutions/cero1.png"],
     "createdAt": "2025-11-04T20:27:56.208Z",
     "updatedAt": "2025-11-04T20:27:56.208Z"
+  },
+  {
+    "id": "c864b491-2f9b-4242-a8d9-69bbd5f473aa",
+    "name": "X-Road",
+    "category": "government",
+    "description": {
+      "es": "Plataforma de código abierto que integra sistemas heterogéneos garantizando confianza y transparencia sin intermediarios. Implementa capa nacional de intercambio de datos con gobernanza dinámica. Implementado en Estonia, Finlandia y Neuquén con casos en Salud, Energía, Banca y Justicia.",
+      "en": "Open-source platform that integrates heterogeneous systems ensuring trust and transparency without intermediaries. Implements national data exchange layer with dynamic governance. Deployed in Estonia, Finland and Neuquén with use cases in Health, Energy, Banking and Justice."
+    },
+    "website": "https://www.thinknetgroup.com.ar/ecosistemas-digitales/",
+    "email": "info@thinknetgroup.com.ar",
+    "phone": "+54 9 11 3702 9025",
+    "linkedinFounders": [],
+    "images": ["/images/solutions/xroad.png"],
+    "createdAt": "2025-11-04T20:36:00.512Z",
+    "updatedAt": "2025-11-04T20:36:00.512Z"
   }
 ]
