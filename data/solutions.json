@@ -1,25 +1,5 @@
 [
   {
-    "id": "67233c93-02aa-4dd6-bb2a-ef5a136f572b",
-    "name": "BurocraciaCero",
-    "category": "government",
-    "description": {
-      "es": "Sistema multiagente de verificación documental. Experto en verificación de diversos tipos de documentos. Ideal para las verificaciones de los trámites! \nSeguros, Certificados, Contratos y Mucho Más!",
-      "en": "Expert in verifying different types of documents.\nIdeal for verification processes in administrative workflows!\nInsurance policies, certificates, contracts, and much more!"
-    },
-    "website": "https://santiagoaranguren.notion.site",
-    "email": "mail@mail.com",
-    "phone": "+5491445588",
-    "linkedinFounders": [
-      "https://www.linkedin.com/in/santiago2050/"
-    ],
-    "images": [
-      "/images/solutions/cddc6f95-0ded-4881-a869-48eff4d025ed.jpg"
-    ],
-    "createdAt": "2025-10-21T21:22:48.057Z",
-    "updatedAt": "2025-10-21T21:22:48.057Z"
-  },
-  {
     "id": "a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d",
     "name": "ETHIX",
     "category": "government",
@@ -160,22 +140,6 @@
     "phone": null,
     "linkedinFounders": [],
     "images": ["/images/solutions/enlite.png"],
-    "createdAt": "2025-10-22T00:00:00.000Z",
-    "updatedAt": "2025-10-22T00:00:00.000Z"
-  },
-  {
-    "id": "c9d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f",
-    "name": "Menta",
-    "category": "health",
-    "description": {
-      "es": "Democratizando el acceso a la salud mental. Plataforma tecnológica enfocada en mejorar la accesibilidad a servicios de salud mental de calidad para todos.",
-      "en": "Democratizing access to mental health. Technology platform focused on improving accessibility to quality mental health services for everyone."
-    },
-    "website": "https://www.soymenta.io/",
-    "email": null,
-    "phone": null,
-    "linkedinFounders": [],
-    "images": ["/images/solutions/soymenta.png"],
     "createdAt": "2025-10-22T00:00:00.000Z",
     "updatedAt": "2025-10-22T00:00:00.000Z"
   },
