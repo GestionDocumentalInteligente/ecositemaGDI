@@ -104,11 +104,13 @@ const app = {
 
     // On home page, show only 3 random solutions
     const isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html';
-    let toDisplay = filtered;
+
+    // ALWAYS shuffle solutions for randomness
+    const shuffled = [...filtered].sort(() => Math.random() - 0.5);
+    let toDisplay = shuffled;
 
     if (isHomePage) {
-      // Shuffle and take 3
-      const shuffled = [...filtered].sort(() => Math.random() - 0.5);
+      // Take only 3 for homepage
       toDisplay = shuffled.slice(0, 3);
 
       // Show "Ver más" button if there are more solutions
@@ -120,7 +122,7 @@ const app = {
         }
       }
     } else {
-      // On "all solutions" page, hide the button
+      // On "all solutions" page, show all but shuffled
       if (viewMoreContainer) utils.hide(viewMoreContainer);
     }
 
