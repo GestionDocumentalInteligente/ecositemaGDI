@@ -67,6 +67,11 @@
 
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ===== CIUDAD TAGS - Dura vs Blanda ===== */
+  --blue-warm: #60a5fa;         /* Warm sky blue - Ciudad Dura */
+  --green-soft: #10b981;        /* Emerald green - Ciudad Blanda */
+  --green-light: #34d399;       /* Light green - hover */
 }
 
 /* ============================================================
@@ -585,6 +590,16 @@ img {
   border-color: var(--border-accent);
 }
 
+.solution-card:has(.ciudad-dura):hover {
+  box-shadow: 0 20px 50px rgba(96, 165, 250, 0.3);
+  border-color: rgba(96, 165, 250, 0.5);
+}
+
+.solution-card:has(.ciudad-blanda):hover {
+  box-shadow: 0 20px 50px rgba(16, 185, 129, 0.3);
+  border-color: rgba(16, 185, 129, 0.5);
+}
+
 .solution-image {
   width: 100%;
   height: 200px;
@@ -597,6 +612,32 @@ img {
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+.ciudad-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+  width: fit-content;
+}
+
+.ciudad-dura {
+  background: rgba(96, 165, 250, 0.15);
+  color: var(--blue-warm);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+.ciudad-blanda {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--green-soft);
+  border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 .solution-category {
@@ -1104,8 +1145,18 @@ img {
 /* ============================================================
    Fundamentals Page
    ============================================================ */
+
+/* Fixed background for entire fundamentals page */
+.fundamentals-page-body {
+  background:
+    linear-gradient(135deg, rgba(10, 22, 40, 0.75) 0%, rgba(15, 31, 61, 0.65) 100%),
+    url('/images/site/fundamentals.png') center 40%/cover no-repeat fixed;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
 .fundamentals-hero {
-  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  background: transparent;
   color: white;
   padding: 10rem 0 8rem;
   text-align: center;
@@ -1171,11 +1222,12 @@ img {
 
 .fundamentals-section {
   padding: 7rem 0;
-  background: var(--background);
+  background: transparent;
+  position: relative;
 }
 
 .fundamentals-section-dark {
-  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  background: transparent;
   color: white;
   position: relative;
   overflow: hidden;
@@ -1624,10 +1676,8 @@ img {
    Fundamentals Page Updates
    ============================================================ */
 .fundamentals-hero-with-bg {
-  background:
-    linear-gradient(135deg, rgba(10, 22, 40, 0.85) 0%, rgba(15, 31, 61, 0.75) 100%),
-    url('/images/site/fundamentals.png') center/cover no-repeat;
-  background-attachment: fixed;
+  /* Background moved to body.fundamentals-page-body */
+  background: transparent;
 }
 
 .fundamentals-steps-grid {
@@ -1640,9 +1690,10 @@ img {
 .fundamentals-steps-grid .fundamentals-step {
   text-align: left;
   padding: 3rem;
-  background: var(--card-bg);
+  background: rgba(2, 8, 23, 0.85);
+  backdrop-filter: blur(10px);
   border-radius: 16px;
-  border: 2px solid var(--border);
+  border: 2px solid rgba(0, 153, 255, 0.3);
   transition: var(--transition);
   position: relative;
   overflow: hidden;
@@ -1684,13 +1735,13 @@ img {
 .fundamentals-steps-grid .fundamentals-step-title {
   font-size: 1.75rem;
   margin-bottom: 1.5rem;
-  color: var(--text-primary);
+  color: #ffffff;
 }
 
 .fundamentals-steps-grid .fundamentals-step-text {
   font-size: 1.15rem;
   line-height: 1.75;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 @media (max-width: 768px) {

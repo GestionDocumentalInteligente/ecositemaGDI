@@ -112,22 +112,6 @@
     "updatedAt": "2025-10-22T00:00:00.000Z"
   },
   {
-    "id": "a7b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d",
-    "name": "Geopagos",
-    "category": "fintech",
-    "description": {
-      "es": "Infraestructura de aceptación de pagos de LATAM. Soluciones de pago digital flexibles y modulares para empresas de toda la región, con partnerships con los principales bancos y fintechs de América Latina.",
-      "en": "Payment acceptance infrastructure for Latin America. Flexible and modular digital payment solutions for companies across the region, with partnerships with major Latin American banks and fintechs."
-    },
-    "website": "https://www.geopagos.com/",
-    "email": null,
-    "phone": null,
-    "linkedinFounders": [],
-    "images": ["/images/solutions/geopagos.png"],
-    "createdAt": "2025-10-22T00:00:00.000Z",
-    "updatedAt": "2025-10-22T00:00:00.000Z"
-  },
-  {
     "id": "b8c9d0e1-f2a3-4b4c-5d6e-7f8a9b0c1d2e",
     "name": "EnLite",
     "category": "health",
@@ -156,22 +140,6 @@
     "phone": null,
     "linkedinFounders": [],
     "images": ["/images/solutions/cux.png"],
-    "createdAt": "2025-10-22T00:00:00.000Z",
-    "updatedAt": "2025-10-22T00:00:00.000Z"
-  },
-  {
-    "id": "e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b",
-    "name": "Swiper",
-    "category": "city",
-    "description": {
-      "es": "Plataforma digital de gestión laboral y recursos humanos. Solución innovadora para optimizar procesos de trabajo, reclutamiento y administración de personal en el entorno laboral moderno.",
-      "en": "Digital platform for labor management and human resources. Innovative solution to optimize work processes, recruitment, and personnel administration in the modern workplace."
-    },
-    "website": "https://www.swiper.work/",
-    "email": null,
-    "phone": null,
-    "linkedinFounders": [],
-    "images": ["/images/solutions/swiper.png"],
     "createdAt": "2025-10-22T00:00:00.000Z",
     "updatedAt": "2025-10-22T00:00:00.000Z"
   },

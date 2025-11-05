@@ -148,6 +148,12 @@ const app = {
     const categoryName = i18n.getCategoryName(solution.category);
     const categoryEmoji = i18n.getCategoryEmoji(solution.category);
 
+    // Determine ciudad type based on category
+    const isCiudadDura = ['government', 'identity'].includes(solution.category);
+    const ciudadType = isCiudadDura ? 'dura' : 'blanda';
+    const ciudadLabel = isCiudadDura ? 'Ciudad Dura' : 'Ciudad Blanda';
+    const ciudadIcon = isCiudadDura ? '🏛️' : '🌳';
+
     return `
       <article class="solution-card" data-id="${solution.id}">
         <img
@@ -158,6 +164,10 @@ const app = {
           onerror="this.src='/images/placeholder.png'"
         >
         <div class="solution-content">
+          <div class="ciudad-tag ciudad-${ciudadType}">
+            <span class="ciudad-icon">${ciudadIcon}</span>
+            ${ciudadLabel}
+          </div>
           <p class="solution-category">${categoryEmoji} ${categoryName}</p>
           <h3 class="solution-name">${solution.name}</h3>
           <p class="solution-description">${utils.truncate(description, 120)}</p>
