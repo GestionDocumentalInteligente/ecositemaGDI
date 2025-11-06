@@ -132,8 +132,8 @@
     "name": "CUX",
     "category": "health",
     "description": {
-      "es": "Asistente de bienestar emocional disponible 24/7 impulsado por inteligencia artificial. 'Contame un secreto' - Plataforma de salud mental que utiliza IA para proporcionar apoyo emocional y conversaciones terapéuticas de manera accesible.",
-      "en": "'Tell me a secret' - 24/7 emotional wellness assistant powered by artificial intelligence. Mental health platform that uses AI to provide emotional support and therapeutic conversations in an accessible way."
+      "es": "Inteligencia Emocional impulsada por IA. Sistema Operativo que potencia la productividad de equipos y mejora la experiencia de clientes. Combina Agentes de IA + Humanos + Data para proporcionar soluciones de salud mental y bienestar emocional accesibles.",
+      "en": "Emotional Intelligence powered by AI. Operating System that boosts team productivity and enhances customer experience. Combines AI Agents + Humans + Data to provide accessible mental health and emotional wellness solutions."
     },
     "website": "https://cux.ai/",
     "email": null,
@@ -141,7 +141,7 @@
     "linkedinFounders": [],
     "images": ["/images/solutions/cux.png"],
     "createdAt": "2025-10-22T00:00:00.000Z",
-    "updatedAt": "2025-10-22T00:00:00.000Z"
+    "updatedAt": "2025-11-06T02:34:33.240Z"
   },
   {
     "id": "f2a3b4c5-d6e7-4f8a-9b0c-1d2e3f4a5b6c",
