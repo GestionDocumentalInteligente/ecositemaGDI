@@ -20,11 +20,11 @@ Selecciona la categoría que mejor describa tu solución:
 
 | Categoría | Código | Descripción | Ejemplos |
 |-----------|--------|-------------|----------|
-| 🏛️ Gobierno | `government` | GovTech, transparencia, procurement | BurocraciaCero, ETHIX, Kleros, B2Gov |
+| 🏛️ Gobierno | `government` | GovTech, transparencia, procurement | ETHIX, Kleros, B2Gov, Cero1, X-Road |
 | 🆔 Identidad | `identity` | Identidad digital, credenciales | SOVRA, POK |
-| 💰 Fintech | `fintech` | Pagos, inclusión financiera | Geopagos, Quién x Mí |
-| 🏥 Salud | `health` | HealthTech, salud mental | EnLite, Menta, CUX |
-| 🌆 Ciudad | `city` | Tech urbana, medio ambiente | Swiper, Satellites on Fire, Hashi |
+| 💰 Fintech | `fintech` | Pagos, inclusión financiera | Quién x Mí |
+| 🏥 Salud | `health` | HealthTech, salud mental | EnLite, CUX |
+| 🌆 Ciudad | `city` | Tech urbana, medio ambiente | Satellites on Fire, Hashi |
 | 🚗 Movilidad | `mobility` | Transporte, movilidad urbana | Izi Park, Ualabee |
 
 ## 🚀 Métodos de Contribución
@@ -330,7 +330,9 @@ Cada solución agregada fortalece el ecosistema y ayuda a más ciudades a descub
 
 ---
 
-**Última actualización**: Octubre 2025
+**Última actualización**: Noviembre 2025
 **Mantenido por**: GDI Latam Development Team
+
+**Total Soluciones Activas**: 14
 
 *"El secreto del cambio es enfocar toda tu energía, no en luchar contra lo viejo, sino en construir lo nuevo." - Sócrates*

@@ -10,14 +10,19 @@ marketplace/
 ├── .gitignore               # Git ignore rules
 ├── package.json             # NPM dependencies and scripts
 ├── server.js                # Express.js server (backend)
+├── start.bat                # Quick start script for Windows
 ├── README.md                # Project documentation
 ├── LICENSE                  # Proprietary license
 ├── AGENTS.md                # Internal maintenance guide
+├── AGENTE_ESPECIALISTA_STARTUPS.md  # Detailed startup management guide
+├── CONTRIBUTING.md          # Guide to add new solutions
+├── DEPLOYMENT.md            # Railway deployment guide
+├── DEPLOY.md                # Local deployment guide
 ├── STRUCTURE.md            # This file
 ├── railway.json             # Railway deployment config
 │
 ├── data/                    # JSON database
-│   └── solutions.json       # Solutions data (main database)
+│   └── solutions.json       # Solutions data (14 solutions)
 │
 └── public/                  # Static frontend assets
     ├── index.html           # Homepage
@@ -36,15 +41,22 @@ marketplace/
     │   └── utils.js         # Utility functions (API calls, DOM helpers)
     │
     └── images/
-        ├── site/            # Site images (logos, diagrams, static assets)
+        ├── site/            # Site images (logos, backgrounds, icons, static assets)
         │   ├── Logo.png
+        │   ├── ecosistema.png
+        │   ├── favicon.png
+        │   ├── home.png
         │   ├── cero1.png
         │   ├── ciudad.png
-        │   └── fundamentals.png
+        │   ├── protocol-bg.png
+        │   ├── contact-bg.png
+        │   ├── solutions-bg.png
+        │   ├── fundamentals.png
+        │   └── fundamentals1.png
         │
-        └── solutions/       # Uploaded solution images (dynamic)
+        └── solutions/       # Solution logos (versioned)
             ├── .gitkeep
-            └── [uuid].{jpg,png,webp}  # Uploaded files
+            └── [solution-name].png  # Solution logos
 ```
 
 ## Backend Architecture
@@ -526,6 +538,6 @@ git push origin feature/my-feature
 
 ---
 
-**Document Version**: 1.0.0
-**Last Updated**: 2025-10-22
+**Document Version**: 1.1.0
+**Last Updated**: 2025-11-06
 **Maintained by**: GDI Latam Development Team

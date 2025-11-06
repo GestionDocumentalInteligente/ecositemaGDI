@@ -15,6 +15,8 @@ Esta guía te llevará paso a paso por el proceso de deployment en Railway, desd
 - [Troubleshooting](#troubleshooting)
 - [Rollback](#rollback)
 
+**Nota**: Para deployment local, consulta [DEPLOY.md](./DEPLOY.md)
+
 ## 🚀 Pre-requisitos
 
 Antes de comenzar, asegúrate de tener:
@@ -458,9 +460,13 @@ Antes de cada deploy a production:
 
 ---
 
-**Última actualización**: Octubre 2025
+**Última actualización**: Noviembre 2025
 **Mantenido por**: GDI Latam Development Team
 
 **Deploy URL**: [https://ecosistema-gdi.railway.app](https://ecosistema-gdi.railway.app)
+
+**Recursos adicionales**:
+- [DEPLOY.md](./DEPLOY.md) - Guía de deployment local
+- [STRUCTURE.md](./STRUCTURE.md) - Arquitectura técnica
 
 *"No pidas permiso. Construí."*

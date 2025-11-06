@@ -82,7 +82,7 @@ Create a `.env` file based on `.env.example`:
 ```
 ecosistema-gdi-marketplace/
 ├── data/
-│   └── solutions.json         # Database of all solutions (16 solutions)
+│   └── solutions.json         # Database of all solutions (14 solutions)
 ├── public/
 │   ├── css/
 │   │   └── main.css          # Main stylesheet with navy blue theme
@@ -91,23 +91,32 @@ ecosistema-gdi-marketplace/
 │   │   ├── app.js            # Main application logic
 │   │   └── utils.js          # Utility functions
 │   ├── images/
-│   │   ├── site/             # Site images (logo, ciudad.png, etc.)
+│   │   ├── site/             # Site images (backgrounds, logo, icons)
+│   │   │   ├── Logo.png
+│   │   │   ├── ecosistema.png
+│   │   │   ├── favicon.png
+│   │   │   ├── home.png
+│   │   │   ├── protocol-bg.png
+│   │   │   ├── contact-bg.png
+│   │   │   ├── solutions-bg.png
+│   │   │   ├── fundamentals.png
+│   │   │   └── ciudad.png
 │   │   └── solutions/        # Solution logos (versioned)
-│   ├── index.html            # Homepage
+│   ├── index.html            # Homepage with hero and featured solutions
 │   ├── solutions.html        # Full catalog page
 │   ├── protocol.html         # Protocol/Ecosystem page
-│   ├── fundamentals.html     # Fundamentals guide
+│   ├── fundamentals.html     # Fundamentals guide (Cómo Hackear el Sistema)
 │   └── contact.html          # Contact form
 ├── server.js                 # Express server
 ├── package.json              # Dependencies
-├── .env.example              # Environment template
-├── .gitignore                # Git ignore rules
+├── start.bat                 # Quick start script for Windows
+├── DEPLOY.md                 # Local deployment guide
 ├── README.md                 # This file
 ├── CONTRIBUTING.md           # Guide to add new solutions
 ├── DEPLOYMENT.md             # Railway deployment guide
 ├── AGENTS.md                 # Maintenance team guide
-├── STRUCTURE.md              # Detailed architecture
-└── LICENSE                   # Copyright license
+├── AGENTE_ESPECIALISTA_STARTUPS.md  # Detailed startup management guide
+└── STRUCTURE.md              # Detailed architecture
 ```
 
 See [STRUCTURE.md](./STRUCTURE.md) for detailed architecture.
@@ -118,14 +127,14 @@ The marketplace organizes solutions into 6 categories:
 
 | Category | Icon | Description | Count |
 |----------|------|-------------|-------|
-| **Gobierno** | 🏛️ | GovTech, transparency, public procurement | 4 |
+| **Gobierno** | 🏛️ | GovTech, transparency, public procurement | 5 |
 | **Identidad** | 🆔 | Digital identity, credentials, verification | 2 |
-| **Fintech** | 💰 | Payments, financial inclusion, digital money | 2 |
-| **Salud** | 🏥 | HealthTech, mental health, wellness | 3 |
-| **Ciudad** | 🌆 | Urban tech, environment, public spaces | 3 |
+| **Fintech** | 💰 | Payments, financial inclusion, digital money | 1 |
+| **Salud** | 🏥 | HealthTech, mental health, wellness | 2 |
+| **Ciudad** | 🌆 | Urban tech, environment, public spaces | 2 |
 | **Movilidad** | 🚗 | Urban mobility, transport, parking | 2 |
 
-**Total Solutions**: 16
+**Total Solutions**: 14
 
 ## 🤝 Contributing
 
