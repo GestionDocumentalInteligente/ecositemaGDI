@@ -1,77 +1,94 @@
 /* ============================================================
-   CSS Variables - Professional Dark Navy Blue Palette
-   Ecosistema GDI - Premium Dark Theme
+   CSS Variables - Navy-Green Community Palette
+   Ecosistema GDI - Human-Centered Design
    ============================================================ */
 :root {
-  /* ===== BACKGROUND SYSTEM - Dark Navy Blues ===== */
-  --bg-darkest: #020817;        /* Deepest navy-black (casi negro con tinte azul oscuro) - Base primaria */
-  --bg-dark: #0a1628;           /* Very dark navy (muy oscuro) - Background principal */
-  --bg-medium: #0f1f3d;         /* Dark navy (oscuro) - Cards primarias */
-  --bg-light: #162a4d;          /* Medium dark navy (medio oscuro) - Cards secundarias, hovers */
-  --bg-elevated: #1a3460;       /* Lighter navy (menos oscuro) - Elementos elevados, dropdowns */
+  /* ===== BACKGROUND SYSTEM - Warm Navy Blues ===== */
+  --bg-darkest: #0d1821;        /* Deep navy with warmth - Base primaria */
+  --bg-dark: #1b2d3f;           /* Warm navy (más cálido que antes) - Background principal */
+  --bg-medium: #2d4356;         /* Medium navy warm - Cards primarias */
+  --bg-light: #3d5a73;          /* Lighter warm navy - Cards secundarias, hovers */
+  --bg-elevated: #4a6b87;       /* Elevated warm navy - Elementos elevados */
 
   /* ===== TEXT SYSTEM - High Contrast ===== */
-  --text-white: #ffffff;        /* Pure white - Headings, important text (21:1 ratio) */
-  --text-primary: #f0f4fc;      /* Very light blue-white - Body text (18.5:1 ratio) */
-  --text-secondary: #c5d4f0;    /* Light blue - Secondary text (10.2:1 ratio) */
-  --text-muted: #8fa3c7;        /* Medium light blue - Muted text, placeholders (5.8:1 ratio) */
-  --text-disabled: #5d7199;     /* Medium blue - Disabled state (3.5:1 ratio) */
+  --text-white: #ffffff;        /* Pure white - Headings, important text */
+  --text-primary: #f0f4fc;      /* Very light - Body text */
+  --text-secondary: #c5d4f0;    /* Light - Secondary text */
+  --text-muted: #8fa3c7;        /* Medium - Muted text, placeholders */
+  --text-disabled: #5d7199;     /* Medium - Disabled state */
 
-  /* ===== ACCENT SYSTEM - Bright Blues & Cyan ===== */
-  --accent-bright: #2563eb;     /* Royal blue - CTAs principales, highlights */
-  --accent-primary: #1e40af;    /* Deep blue - CTAs secundarios, links */
-  --accent-medium: #3b82f6;     /* Medium blue - Hover states de links */
-  --accent-soft: #60a5fa;       /* Soft blue - Accents suaves, badges */
+  /* ===== ACCENT SYSTEM - Community Colors ===== */
+  --accent-bright: #f4c542;     /* Warm golden yellow - CTAs principales (del sol en imágenes) */
+  --accent-primary: #1b2d3f;    /* Forest green - CTAs secundarios, links (de árboles) */
+  --accent-medium: #5bb5a2;     /* Turquoise soft - Hover states (vida, agua) */
+  --accent-soft: #3d5a73;       /* Soft green - Accents suaves, badges */
 
-  /* ===== INTERACTIVE COLORS - Blues for UI Elements ===== */
-  --interactive-primary: #2563eb;    /* Royal blue - Botones primarios en fondos claros */
-  --interactive-hover: #1d4ed8;      /* Darker royal blue - Hover state */
-  --interactive-active: #1e40af;     /* Deep blue - Active/pressed state */
+  /* ===== NATURE GREENS - From Images ===== */
+  --green-forest-dark: #0d1821; /* Dark forest green - Árboles, naturaleza */
+  --green-forest: #1b2d3f;      /* Forest green - Vegetación principal */
+  --green-soft: #3d5a73;        /* Soft green - Acentos verdes */
+  --green-light: #8ba888;       /* Light green - Hover states verdes */
 
-  /* ===== BORDER SYSTEM - Visible but Subtle ===== */
-  --border-subtle: #1e3a5f;     /* Dark navy-blue - Bordes sutiles (contrast 1.5:1 sobre bg-dark) */
-  --border-medium: #2d4a75;     /* Medium navy - Bordes normales (contrast 2:1) */
-  --border-strong: #3d5a8a;     /* Lighter navy - Bordes destacados (contrast 2.8:1) */
-  --border-accent: #1e40af;     /* Deep blue - Bordes de acento */
+  /* ===== WARM TONES - From Architecture ===== */
+  --warm-terracotta: #d4a574;   /* Warm terracotta - Arquitectura colonial */
+  --warm-gold: #f4c542;         /* Golden yellow - Sol, energía */
+  --warm-amber: #e8b563;        /* Amber - Iluminación cálida */
 
-  /* ===== SHADOWS - Blue Glows ===== */
-  --shadow-sm: rgba(30, 64, 175, 0.08);      /* Subtle glow */
-  --shadow-md: rgba(30, 64, 175, 0.15);      /* Medium glow */
-  --shadow-lg: rgba(30, 64, 175, 0.25);      /* Strong glow */
-  --shadow-xl: rgba(30, 64, 175, 0.35);      /* Intense glow */
+  /* ===== INTERACTIVE COLORS ===== */
+  --interactive-primary: #1b2d3f;    /* Forest green - Botones primarios */
+  --interactive-hover: #5bb5a2;      /* Turquoise - Hover state */
+  --interactive-active: #0d1821;     /* Dark green - Active/pressed state */
+
+  /* ===== BORDER SYSTEM ===== */
+  --border-subtle: #2d4356;     /* Warm navy - Bordes sutiles */
+  --border-medium: #3d5a73;     /* Medium warm navy - Bordes normales */
+  --border-strong: #4a6b87;     /* Lighter navy - Bordes destacados */
+  --border-accent: #1b2d3f;     /* Forest green - Bordes de acento */
+
+  /* ===== SHADOWS - Natural Glows ===== */
+  --shadow-sm: rgba(27, 45, 63, 0.08);      /* Subtle green glow */
+  --shadow-md: rgba(27, 45, 63, 0.15);      /* Medium green glow */
+  --shadow-lg: rgba(27, 45, 63, 0.25);      /* Strong green glow */
+  --shadow-xl: rgba(27, 45, 63, 0.35);      /* Intense green glow */
   --shadow-dark: rgba(0, 0, 0, 0.3);         /* Dark shadow para depth */
 
-  /* ===== GRADIENT SYSTEM - Navy to Blue ===== */
-  --gradient-navy-dark: linear-gradient(135deg, #0a1628 0%, #0f1f3d 100%);
-  --gradient-navy-blue: linear-gradient(135deg, #0f2544 0%, #1a3a6e 100%);
-  --gradient-blue-cyan: linear-gradient(135deg, #1e4a8f 0%, #1e40af 100%);
-  --gradient-cyan-bright: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
-  --gradient-hero: linear-gradient(135deg, rgba(10, 22, 40, 0.97) 0%, rgba(26, 52, 96, 0.92) 100%);
+  /* ===== GRADIENT SYSTEM - Navy to Green ===== */
+  --gradient-navy-dark: linear-gradient(135deg, #1b2d3f 0%, #2d4356 100%);
+  --gradient-navy-green: linear-gradient(135deg, #2d4356 0%, #0d1821 100%);
+  --gradient-green-warm: linear-gradient(135deg, #1b2d3f 0%, #5bb5a2 100%);
+  --gradient-warm-gold: linear-gradient(135deg, #d4a574 0%, #f4c542 100%);
+  --gradient-hero: linear-gradient(135deg, rgba(27, 45, 63, 0.85) 0%, rgba(13, 24, 33, 0.75) 100%);
 
-  /* ===== LEGACY COMPATIBILITY (mantener compatibilidad con código existente) ===== */
-  --primary: #1e40af;           /* Maps to accent-primary */
-  --secondary: #3b82f6;         /* Maps to accent-medium */
-  --accent: #2563eb;            /* Maps to accent-bright */
-  --accent-light: #60a5fa;      /* Maps to accent-soft */
-  --background: #0a1628;        /* Maps to bg-dark */
-  --card-bg: #0f1f3d;           /* Maps to bg-medium */
+  /* ===== OVERLAY GRADIENTS - Para backgrounds con imágenes ===== */
+  --overlay-hero: linear-gradient(135deg, rgba(27, 45, 63, 0.75) 0%, rgba(13, 24, 33, 0.65) 100%);
+  --overlay-dark: linear-gradient(135deg, rgba(13, 24, 33, 0.85) 0%, rgba(27, 45, 63, 0.80) 100%);
+  --overlay-medium: linear-gradient(135deg, rgba(27, 45, 63, 0.70) 0%, rgba(45, 67, 86, 0.65) 100%);
+  --overlay-light: linear-gradient(135deg, rgba(45, 67, 86, 0.60) 0%, rgba(61, 90, 115, 0.55) 100%);
+
+  /* ===== LEGACY COMPATIBILITY ===== */
+  --primary: #1b2d3f;           /* Maps to accent-primary (forest green) */
+  --secondary: #5bb5a2;         /* Maps to accent-medium (turquoise) */
+  --accent: #f4c542;            /* Maps to accent-bright (golden) */
+  --accent-light: #3d5a73;      /* Maps to accent-soft (soft green) */
+  --background: #1b2d3f;        /* Maps to bg-dark */
+  --card-bg: #2d4356;           /* Maps to bg-medium */
   --text-primary: #f0f4fc;      /* Maps to text-primary */
   --text-secondary: #c5d4f0;    /* Maps to text-secondary */
-  --border: #2d4a75;            /* Maps to border-medium */
-  --shadow: rgba(30, 64, 175, 0.15);           /* Maps to shadow-md */
-  --shadow-hover: rgba(30, 64, 175, 0.25);     /* Maps to shadow-lg */
-  --dark-bg: #020817;           /* Maps to bg-darkest */
+  --border: #3d5a73;            /* Maps to border-medium */
+  --shadow: rgba(27, 45, 63, 0.15);           /* Maps to shadow-md */
+  --shadow-hover: rgba(27, 45, 63, 0.25);     /* Maps to shadow-lg */
+  --dark-bg: #0d1821;           /* Maps to bg-darkest */
   --dark-text: #ffffff;         /* Maps to text-white */
-  --gradient-start: #0f2544;    /* Gradient start navy */
-  --gradient-end: #1a3a6e;      /* Gradient end blue */
+  --gradient-start: #2d4356;    /* Gradient start warm navy */
+  --gradient-end: #0d1821;      /* Gradient end forest green */
 
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   /* ===== CIUDAD TAGS - Dura vs Blanda ===== */
-  --blue-warm: #60a5fa;         /* Warm sky blue - Ciudad Dura */
-  --green-soft: #10b981;        /* Emerald green - Ciudad Blanda */
-  --green-light: #34d399;       /* Light green - hover */
+  --blue-warm: #5bb5a2;         /* Turquoise - Ciudad Dura */
+  --green-soft: #1b2d3f;        /* Forest green - Ciudad Blanda */
+  --green-light: #3d5a73;       /* Soft green - hover */
 }
 
 /* ============================================================
@@ -93,9 +110,9 @@
    - text-disabled (#5d7199):  3.5:1 ratio ✓ Large text only
 
    ACCENT COLORS ON DARK BACKGROUNDS:
-   - accent-bright (#2563eb):  Royal blue - Primary CTAs
+   - accent-bright (#0d1821):  Royal blue - Primary CTAs
    - accent-primary (#1e40af): Deep blue - Secondary CTAs, links
-   - accent-medium (#3b82f6):  Medium blue - Hover states
+   - accent-medium (#1b2d3f):  Medium blue - Hover states
    - accent-soft (#60a5fa):    Soft blue - Badges and accents
 
    ============================================================
@@ -154,7 +171,7 @@ body {
   font-family: var(--font-family);
   background-color: var(--background);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -196,7 +213,7 @@ img {
    Header
    ============================================================ */
 .header {
-  background-color: var(--primary);
+  background-color: #0C0B4A;
   color: white;
   padding: 1rem 0;
   box-shadow: 0 2px 8px var(--shadow);
@@ -282,9 +299,7 @@ img {
    Hero Section
    ============================================================ */
 .hero {
-  background:
-    var(--gradient-hero),
-    url('/images/site/hero-bg.png') center/cover no-repeat;
+  background: transparent;
   color: white;
   padding: 4rem 0;
   text-align: center;
@@ -299,22 +314,28 @@ img {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(37, 99, 235, 0.15) 0%, transparent 50%);
+  background: radial-gradient(circle at 30% 50%, rgba(27, 45, 63, 0.12) 0%, transparent 50%);
   pointer-events: none;
 }
 
 /* Page Hero (for solutions.html) */
 .page-hero {
-  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  background: transparent;
   color: white;
-  padding: 3rem 0;
+  padding: 2rem 0 1rem 0;
   text-align: center;
+  position: relative;
 }
 
 .page-title {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
+  background: rgba(13, 24, 33, 0.75);
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  display: inline-block;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .page-subtitle {
@@ -326,16 +347,15 @@ img {
 
 .hero-badge {
   display: inline-block;
-  padding: 0.5rem 1.5rem;
-  background: rgba(37, 99, 235, 0.2);
-  border: 2px solid var(--accent);
-  border-radius: 50px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 2px;
   margin-bottom: 2rem;
   position: relative;
   z-index: 1;
+}
+
+.hero-badge-image {
+  height: 100px;
+  width: auto;
+  display: block;
 }
 
 .hero-title {
@@ -369,6 +389,17 @@ img {
   font-weight: 300;
 }
 
+.hero-content-box {
+  background: rgba(13, 24, 33, 0.40);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(13, 24, 33, 0.2);
+  border: 1px solid rgba(27, 45, 63, 0.2);
+  display: inline-block;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .hero-cta {
   display: flex;
   gap: 1rem;
@@ -390,9 +421,9 @@ img {
 }
 
 .btn-hero-primary {
-  background: var(--gradient-cyan-bright);
+  background: linear-gradient(135deg, #0d1821 0%, #1b2d3f 100%);
   color: white;
-  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
+  box-shadow: 0 8px 25px rgba(13, 24, 33, 0.4);
   position: relative;
   overflow: hidden;
 }
@@ -413,9 +444,9 @@ img {
 }
 
 .btn-hero-primary:hover {
-  background: var(--interactive-hover);
+  background: linear-gradient(135deg, #1d4ed8 0%, #0d1821 100%);
   transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(37, 99, 235, 0.7);
+  box-shadow: 0 12px 35px rgba(13, 24, 33, 0.6);
 }
 
 .btn-hero-secondary {
@@ -497,13 +528,12 @@ img {
    Filters
    ============================================================ */
 .filters {
-  background-color: var(--card-bg);
-  padding: 2rem 0;
-  border-bottom: 1px solid var(--border);
+  background-color: transparent;
+  padding: 1rem 0;
+  border-bottom: none;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 4px var(--shadow);
 }
 
 .filter-buttons {
@@ -740,7 +770,6 @@ img {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(4px);
 }
 
 .modal-content {
@@ -896,15 +925,17 @@ img {
 }
 
 .btn-view-more {
-  display: inline-block;
-  padding: 1rem 2.5rem;
+  display: block;
+  width: 100%;
+  padding: 1.25rem 2.5rem;
   background-color: var(--primary);
   color: white;
   font-weight: 600;
   font-size: 1.1rem;
-  border-radius: 50px;
+  border-radius: 12px;
   transition: var(--transition);
   box-shadow: 0 4px 12px var(--shadow);
+  text-align: center;
 }
 
 .btn-view-more:hover {
@@ -990,7 +1021,7 @@ img {
    Footer
    ============================================================ */
 .footer {
-  background-color: #000000;
+  background-color: #0C0B4A;
   color: white;
   padding: 3rem 0 1.5rem;
   margin-top: 0;
@@ -1064,7 +1095,8 @@ img {
 /* Contact Form Section */
 .contact-form-section {
   padding: 3rem 0 2rem;
-  background: #1e3660;
+  background: transparent;
+  position: relative;
 }
 
 .contact-form-container {
@@ -1146,11 +1178,42 @@ img {
    Fundamentals Page
    ============================================================ */
 
-/* Fixed background for entire fundamentals page */
-.fundamentals-page-body {
+/* ============================================================
+   Full Page Fixed Backgrounds
+   ============================================================ */
+
+/* Home Page - Scrolling background */
+.home-page-body {
+  background: url('/images/site/home.png') center top/cover no-repeat;
+  min-height: 100vh;
+}
+
+/* Solutions Page - Fixed background */
+.solutions-page-body {
+  background: url('/images/site/solutions-bg.png') center/cover no-repeat fixed;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Protocol Page - Fixed background */
+.protocol-page-body {
   background:
-    linear-gradient(135deg, rgba(10, 22, 40, 0.75) 0%, rgba(15, 31, 61, 0.65) 100%),
-    url('/images/site/fundamentals.png') center 40%/cover no-repeat fixed;
+    linear-gradient(135deg, rgba(13, 24, 33, 0.45) 0%, rgba(27, 45, 63, 0.20) 100%),
+    url('/images/site/protocol-bg.png') center/cover no-repeat fixed;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Contact Page - Fixed background */
+.contact-page-body {
+  background: url('/images/site/contact-bg.png') center/cover no-repeat fixed;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Fundamentals Page - Fixed background */
+.fundamentals-page-body {
+  background: url('/images/site/fundamentals.png') center/cover no-repeat fixed;
   background-attachment: fixed;
   min-height: 100vh;
 }
@@ -1393,7 +1456,7 @@ img {
   font-size: 3rem;
   font-weight: 900;
   margin-bottom: 2rem;
-  color: var(--accent);
+  color: #ffffff;
   letter-spacing: -0.02em;
   text-shadow: 0 0 40px rgba(0, 153, 255, 0.2);
 }
@@ -1421,13 +1484,13 @@ img {
   padding: 1.25rem 3rem;
   font-size: 1.15rem;
   font-weight: 700;
-  box-shadow: 0 10px 40px rgba(37, 99, 235, 0.5);
+  box-shadow: 0 10px 40px rgba(13, 24, 33, 0.5);
   transition: var(--transition);
 }
 
 .fundamentals-cta-buttons .btn-hero-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 50px rgba(37, 99, 235, 0.7);
+  box-shadow: 0 15px 50px rgba(13, 24, 33, 0.7);
 }
 
 @media (max-width: 768px) {
@@ -1494,7 +1557,7 @@ img {
    ============================================================ */
 .cities-section {
   padding: 5rem 0;
-  background: var(--background);
+  background: transparent;
 }
 
 .cities-grid {
@@ -1502,6 +1565,11 @@ img {
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+  background: rgba(13, 24, 33, 0.40);
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(13, 24, 33, 0.1);
+  border: 1px solid rgba(27, 45, 63, 0.15);
 }
 
 .cities-title {
@@ -1562,8 +1630,9 @@ img {
    ============================================================ */
 .protocol-hero {
   padding: 5rem 0;
-  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  background: transparent;
   color: white;
+  position: relative;
 }
 
 .protocol-hero-grid {
@@ -1571,6 +1640,15 @@ img {
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+  background: rgba(13, 24, 33, 0.65);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(13, 24, 33, 0.2);
+  border: 1px solid rgba(27, 45, 63, 0.2);
+}
+
+.protocol-hero-visual {
+  /* Transparencia movida al contenedor padre */
 }
 
 .protocol-hero-image {
@@ -1579,6 +1657,10 @@ img {
   height: auto;
   margin: 0 auto;
   display: block;
+}
+
+.protocol-hero-content {
+  /* Transparencia movida al contenedor padre */
 }
 
 .protocol-hero-title {
@@ -1605,7 +1687,8 @@ img {
 
 .protocol-principles-section {
   padding: 5rem 0;
-  background: var(--background);
+  background: transparent;
+  text-align: center;
 }
 
 .protocol-principles-title {
@@ -1614,6 +1697,11 @@ img {
   text-align: center;
   margin-bottom: 3rem;
   color: #ffffff;
+  background: rgba(13, 24, 33, 0.65);
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  display: inline-block;
+  box-shadow: 0 4px 20px rgba(13, 24, 33, 0.2);
 }
 
 .protocol-principles-grid {
@@ -1625,17 +1713,18 @@ img {
 }
 
 .protocol-principle-card {
-  background: var(--card-bg);
+  background: rgba(13, 24, 33, 0.70);
   padding: 2.5rem;
   border-radius: 12px;
-  border: 2px solid var(--border);
+  border: 2px solid rgba(27, 45, 63, 0.4);
   transition: var(--transition);
 }
 
 .protocol-principle-card:hover {
-  border-color: var(--accent);
+  border-color: #1b2d3f;
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 153, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(27, 45, 63, 0.4);
+  background: rgba(13, 24, 33, 0.75);
 }
 
 .protocol-principle-icon {
@@ -1690,36 +1779,25 @@ img {
 .fundamentals-steps-grid .fundamentals-step {
   text-align: left;
   padding: 3rem;
-  background: rgba(2, 8, 23, 0.85);
-  backdrop-filter: blur(10px);
+  background: transparent;
   border-radius: 16px;
-  border: 2px solid rgba(0, 153, 255, 0.3);
+  border: none;
   transition: var(--transition);
   position: relative;
   overflow: hidden;
 }
 
 .fundamentals-steps-grid .fundamentals-step::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent) 0%, #0077cc 100%);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s ease;
+  display: none;
 }
 
 .fundamentals-steps-grid .fundamentals-step:hover::before {
-  transform: scaleX(1);
+  display: none;
 }
 
 .fundamentals-steps-grid .fundamentals-step:hover {
-  border-color: var(--accent);
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 153, 255, 0.3);
+  transform: none;
+  box-shadow: none;
 }
 
 .fundamentals-steps-grid .fundamentals-step-number {
@@ -1792,7 +1870,7 @@ img {
 /* Focus states for accessibility */
 .btn-hero-primary:focus,
 .btn-hero-secondary:focus {
-  outline: 3px solid rgba(37, 99, 235, 0.5);
+  outline: 3px solid rgba(13, 24, 33, 0.5);
   outline-offset: 3px;
 }
 

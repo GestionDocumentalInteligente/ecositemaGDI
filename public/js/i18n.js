@@ -28,7 +28,7 @@ const i18n = {
         viewAll: 'Ver todas las soluciones →'
       },
       solutions: {
-        pageTitle: 'Soluciones que construyen el futuro de las ciudades, ignorando las reglas del pasado'
+        pageTitle: 'Soluciones que construyen el futuro de las ciudades, ignorando las reglas del pasado.'
       },
       filters: {
         all: 'Todas'
@@ -187,7 +187,7 @@ const i18n = {
         viewAll: 'View all solutions →'
       },
       solutions: {
-        pageTitle: 'Solutions building the future of cities, ignoring the rules of the past'
+        pageTitle: 'Solutions building the future of cities, ignoring the rules of the past.'
       },
       filters: {
         all: 'All'
